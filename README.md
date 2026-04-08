@@ -64,14 +64,19 @@ Contains auxiliary resources and parallel corpora used to aid the process.
 
 ## 🌐 Data Sources
 
-All raw data originate from publicly available Mozilla open-source platforms:
+All raw data originate from publicly available open-source platforms:
 
+### Firefox Data
 - **Firefox Support Forum**  
   [https://support.mozilla.org/en-US/questions/firefox](https://support.mozilla.org/en-US/questions/firefox)
 - **Firefox Official Support Documentation**  
   [https://support.mozilla.org/en-US/products/firefox](https://support.mozilla.org/en-US/products/firefox)
 - **Mozilla Bugzilla** *(Firefox product components and historical bugs)*  
   [https://bugzilla.mozilla.org/describecomponents.cgi?product=Firefox](https://bugzilla.mozilla.org/describecomponents.cgi?product=Firefox)
+
+### VS Code Data
+For VS Code, the data were collected from the official VS Code documentation site (https://code.visualstudio.com/docs) and the official GitHub issue tracker for the VS Code project (https://github.com/microsoft/vscode/issues).
+Researchers can independently retrieve the raw data from these public sources if needed.
 
 These datasets are fully reproducible and can be independently re-collected from the official sources above.
 

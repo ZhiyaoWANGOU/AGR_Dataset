@@ -1,0 +1,1368 @@
+
+===== 🧩 Running Case #1/42 | ID: 305028 =====
+🧠 Checking if feedback matches any existing generated reports...
+💾 No similar feedbacks found in generated memory.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet addresses an issue with Ctrl+ . keybinding being invalid, which is related to the user’s problem, but it does not mention Copilot CLI or provide enough detail to resolve the specific context or reproduce the bug.'}
+
+🔎 Checking candidate #2
+{'relevant': True, 'sufficient': False, 'reason': 'Addresses generic Ctrl+C/V shortcut failure, but does not cover Ctrl+/Ctrl- or the Copilot CLI context.'}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': 'The provided snippet is a generic VS Code bug‑report template, not specific to the Ctrl+/Ctrl‑ shortcut issue in the Copilot CLI.'}
+
+🔎 Checking candidate #4
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet explains general VS\u202fCode keybinding rules, which is relevant to a shortcut‑not‑working issue, but it does not address Copilot CLI specifics or troubleshooting steps, so it alone is not sufficient.'}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses missing Quick Actions, not keyboard shortcuts, so it is neither relevant nor sufficient for the issue.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ search
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] Ctrl+ and Ctrl- shortcuts not functioning in Copilot CLI in VS Code on Windows [Symptoms] Shortcuts not triggering expected behavior [Environment] VS Code on Windows [Possible Category] Extensions [Problem Type] Keyboard shortcut not functioning
+🌍 Searching for: [Problem] Ctrl+ and Ctrl- shortcuts not functioning in Copilot CLI in VS Code on Windows [Symptoms] Shortcuts not triggering expected behavior [Environment] VS Code on Windows [Possible Category] Extensions [Problem Type] Keyboard shortcut not functioning
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The summary provides sufficient context to create a structured VS Code issue brief.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Ctrl+ and Ctrl- shortcuts not functioning in Copilot CLI in VS Code on Windows [Symptoms] Shortcuts not triggering expected behavior [Environment] VS Code on Windows [Possible Category] Extensions [Problem Type] Keyboard shortcut not functioning",
+  "collected": [
+    "[bug, keybindings-editor] The shortcut key input and trigger of ctrl + . are invalid\n\n<!-- ⚠️⚠️ Do Not Delete This! bug_report_template ⚠️⚠️ -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- 🕮 Read our guide about submitting issues: https://github.com/microsoft/vscode/wiki/Submitting-Bugs-and-Suggestions -->\n<!-- 🔎 Search existing issues to avoid creating duplicates. -->\n<!-- 🧪 Test using the latest Insiders build to see if your issue has already been fixed: https://code.visualstudio.com/insiders/ -->\n<!-- 💡 Instead of creating your report here, use 'Report Issue' from the 'Help' menu in VS Code to pre-fill useful information. -->\n<!-- 🔧 Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Yes/No\n\n<!-- 🪓 If you answered No above, use 'Help: Start Extension Bisect' from Command Palette to try to identify the cause. -->\n<!-- 📣 Issues caused by an extension need to be reported directly to the extension publisher. The 'Help > Report Issue' dialog can assist with this. -->\n- VS Code Version: \nVersion: 1.94.2 (system setup)\nCommit: 384ff7382de624fb94dbaf6da11977bba1ecd427\nDate: 2024-10-09T16:08:44.566Z\nElectron: 30.5.1\nElectronBuildId: 10262041\nChromium: 124.0.6367.243\nNode.js: 20.16.0\nV8: 12.4.254.20-electron.0\n- OS Version: \nOS: Windows_NT x64 10.0.26100\n\nSteps to Reproduce:\n\n1. When I'm coding, and I get an error, it prompts me ctrl +. It shows the repair option, but when I use it, nothing happens.\n2. When I opened the keyboard Settings TAB and wanted to rebind the shortcut key for the Quick Fix option, I found the shortcut ctrl +. When there is no reaction, there is no problem in entering other key combinations, and ctrl + is entered in other software. Is displayed and can be entered normally\n3. ![Image](https://github.com/user-attachments/assets/4242c274-98b0-4f5f-8533-8e584ee64201)",
+    "[bug, editor-clipboard] Ctrl+C and V Dont work\n\n<!-- ⚠️⚠️ Do Not Delete This! bug_report_template ⚠️⚠️ -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- 🕮 Read our guide about submitting issues: https://github.com/microsoft/vscode/wiki/Submitting-Bugs-and-Suggestions -->\n<!-- 🔎 Search existing issues to avoid creating duplicates. -->\n<!-- 🧪 Test using the latest Insiders build to see if your issue has already been fixed: https://code.visualstudio.com/insiders/ -->\n<!-- 💡 Instead of creating your report here, use 'Report Issue' from the 'Help' menu in VS Code to pre-fill useful information. -->\n<!-- 🔧 Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Yes/No\n\n<!-- 🪓 If you answered No above, use 'Help: Start Extension Bisect' from Command Palette to try to identify the cause. -->\n<!-- 📣 Issues caused by an extension need to be reported directly to the extension publisher. The 'Help > Report Issue' dialog can assist with this. -->\n- VS Code Version: 1.101.2\n- OS Version: Windows 10\n\nSteps to Reproduce:\n\nin vscode (v1.10.2) Ctrl+C and Ctrl+V dont work and i can't copy and paste with keyboard shortcuts.\ni check this problem in multi device and account .",
+    "A keyboard shortcut configuration in VS Code is also known as a keyboard rule . Each rule consists of the following attributes:\n\n- key : describes the pressed key(s), for example ⌘F (Windows, Linux Ctrl+F ) .\n- command : the identifier of the VS Code command to execute, for example workbench.view.explorer to open the Explorer view.\n- when : (optional) clause containing a boolean expression that is evaluated depending on the current context .\n\n- key : describes the pressed key(s), for example ⌘F (Windows, Linux Ctrl+F ) .\n\nCode/Command:\nkey\n\n- command : the identifier of the VS Code command to execute, for example workbench.view.explorer to open the Explorer view.\n\nCode/Command:\ncommand\n\nCode/Command:\nworkbench.view.explorer\n\n- when : (optional) clause containing a boolean expression that is evaluated depending on the current context .\n\nCode/Command:\nwhen\n\nChords (two separate keypress actions) are described by separating the two keypresses with a space. For example, Ctrl+K Ctrl+C .\n\nWhen a key is pressed, the following evaluation rules are applied:\n\n- Rules are evaluated from bottom to top .\n- The first rule that matches both the key and when clause, is accepted.\n- If a rule is found, no more rules are processed.\n- If a rule is found and has a command set, the command is executed.\n\n- Rules are evaluated from bottom to top .\n\n- The first rule that matches both the key and when clause, is accepted.\n\nCode/Command:\nkey\n\nCode/Command:\nwhen\n\n- If a rule is found, no more rules are processed.\n\n- If a rule is found and has a command set, the command is executed.\n\nCode/Command:\ncommand\n\nCode/Command:\ncommand\n\nThe additional keybindings.json rules are appended at runtime to the bottom of the default rules, thus allowing them to overwrite the default rules. The keybindings.json file is watched by VS Code, so editing it while VS Code is running will update the rules at run-time.\n\nCode/Command:\nkeybindings.json\n\nCode/Command:\nkeybindings.json\n\nThe keyboard shortcuts dispatching is done by analyzing a list of rules that are expressed in JSON. Here are some examples:\n\nCode/Command:\n// Keyboard shortcuts that are active when the focus is in the editor\n{\n\"key\"\n:\n\"home\"\n,\n\"command\"\n:\n\"cursorHome\"\n,\n\"when\"\n:\n\"editorTextFocus\"\n},\n{\n\"key\"\n:\n\"shift+home\"\n,\n\"command\"\n:\n\"cursorHomeSelect\"\n,\n\"when\"\n:\n\"editorTextFocus\"\n},\n// Keyboard shortcuts that are complementary\n{\n\"key\"\n:\n\"f5\"\n,\n\"command\"\n:\n\"workbench.action.debug.continue\"\n,\n\"when\"\n:\n\"inDebugMode\"\n},\n{\n\"key\"\n:\n\"f5\"\n,\n\"command\"\n:\n\"workbench.action.debug.start\"\n,\n\"when\"\n:\n\"!inDebugMode\"\n},\n// Global keyboard shortcuts\n{\n\"key\"\n:\n\"ctrl+f\"\n,\n\"command\"\n:\n\"actions.find\"\n},\n{\n\"key\"\n:\n\"alt+left\"\n,\n\"command\"\n:\n\"workbench.action.navigateBack\"\n},\n{\n\"key\"\n:\n\"alt+right\"\n,\n\"command\"\n:\n\"workbench.action.navigateForward\"\n},\n// Global keyboard shortcuts using chords (two separate keypress actions)\n{\n\"key\"\n:\n\"ctrl+k enter\"\n,\n\"command\"\n:\n\"workbench.action.keepEditor\"\n},\n{\n\"key\"\n:\n\"ctrl+k ctrl+w\"\n,\n\"command\"\n:\n\"workbench.action.closeAllEditors\"\n},"
+  ],
+  "decision": "search\n(Used online search summary)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Ctrl+ and Ctrl- shortcuts do not trigger Copilot CLI actions in VS Code on Windows\",\n  \"problem_summary\": \"The standard keyboard shortcuts for increasing and decreasing the Copilot CLI font size (Ctrl+ and Ctrl-) are not responding when the extension is active in VS Code on Windows.\",\n  \"evidence\": [\n    \"Shortcuts fail to trigger any visible behavior\",\n    \"Environment: VS Code on Windows\",\n    \"Known issue patterns suggest keybinding conflicts or missing registrations\",\n    \"Copilot CLI UI renders correctly but shortcuts still silent\"\n  ],\n  \"suggested_improvements\": [\n    \"Inspect and edit `keybindings.json` to ensure that Copilot CLI commands are explicitly bound to Ctrl+ and Ctrl-.\",\n    \"Remove or override any existing keybindings that use Ctrl+ or Ctrl- for other commands.\",\n    \"Verify that the Copilot CLI extension registers its commands in the command palette.\",\n    \"Check that the Copilot CLI UI element has focus when shortcuts are pressed, or set a global keybinding that applies when the extension panel is active.\"\n  ],\n  \"possible_causes\": [\n    \"Conflict with another extension or built‑in command using the same key combinations.\",\n    \"Missing or incomplete keybinding definitions for Copilot CLI in the user's keybindings file.\",\n    \"The Copilot CLI UI may not be focused when the shortcuts are used, causing them to be ignored.\",\n    \"Windows-specific keyboard handling quirks (e.g., Num Lock or other modifier interactions).\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #2/42 | ID: 305025 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet contains the exact TypeError, stack trace, and tags that match the user’s symptoms, enabling a concise issue or improvement brief.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Unexpected type error, [Symptoms] crash during chat editing, [Environment] Linux, macOS, Windows, [Possible Category] Extensions, [Problem Type] Type assertion failure",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Crash on creating a new Chat Editor due to undefined 'toString' call\",\n  \"problem_summary\": \"When a user clicks the action to create a new Chat Editor, VS Code crashes with a TypeError: \\\"Cannot read properties of undefined (reading 'toString')\\\". The error originates from `ChatModelStore.toKey` while retrieving a session.\",\n  \"evidence\": [\n    \"Stack trace showing failure at `ChatModelStore.toKey` (line 126) in chatServiceImpl.js\",\n    \"Crash occurs on Linux, macOS, and Windows in insiders release\",\n    \"Verified by user reproducing the action\"\n  ],\n  \"suggested_improvements\": [\n    \"Add null/undefined checks before calling `toString` on keys in `ChatModelStore.toKey`.\",\n    \"Validate that a session exists before retrieving it in `ChatService.getSession`.\",\n    \"Log a clear warning when a session key is missing instead of throwing.\",\n    \"Consider adding a defensive fallback key or creating a new session if none exists.\",\n    \"Run unit tests for chat session creation paths to catch similar issues.\"\n  ],\n  \"possible_causes\": [\n    \"`ChatModelStore.get` is invoked with an undefined key, likely due to a missing or corrupted session entry.\",\n    \"Recent changes to the chat extension or its integration may not handle the case where no session is present.\",\n    \"Race condition between session initialization and the editor creation trigger.\",\n    \"Insiders build may have introduced a refactor that removed a guard clause.\"\n  ],\n  \"notes\": \"Occurs in insiders release; consider reproducing on stable release. This bug affects core chat functionality and should be addressed in the next patch.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #3/42 | ID: 304922 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet addresses a language‑change rendering bug, not a Todo widget crash.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': "The snippet describes a generic missing input widget in chat sessions, but does not address the specific Todo widget rendering issue that is causing the crash. It lacks details relevant to the user's problem, so it is neither directly relevant nor sufficient for drafting a grounded issue brief."}
+
+🔎 Checking candidate #3
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet mentions a rendering failure on macOS in VS\u202fCode Insiders, which overlaps the UI/interaction issue category, but it does not address the specific Todo widget crash or chat‑input failure described by the user, so it alone is not enough to ground a detailed issue or improvement brief.'}
+
+🔎 Checking candidate #4
+{'relevant': False, 'sufficient': False, 'reason': "The snippet discusses a chat response not fully rendered, but does not address the Todo widget crash or chat input crash described in the user's problem."}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a bug in a custom AnyWidget widget that blocks typing in its text field, which is unrelated to a Todo widget rendering crash that makes the chat input unusable.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ **Decision:** search.
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] Todo widget rendering crashes chat input, [Symptoms] chat input becomes unusable, [Environment] macOS with VS Code Insiders, [Possible Category] UI / Interaction, [Problem Type] Widget rendering error
+🌍 Searching for: [Problem] Todo widget rendering crashes chat input, [Symptoms] chat input becomes unusable, [Environment] macOS with VS Code Insiders, [Possible Category] UI / Interaction, [Problem Type] Widget rendering error
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The summary gives specific issue IDs, symptoms, environment, and category, sufficient to create a structured issue brief.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Todo widget rendering crashes chat input, [Symptoms] chat input becomes unusable, [Environment] macOS with VS Code Insiders, [Possible Category] UI / Interaction, [Problem Type] Widget rendering error",
+  "collected": [
+    "[bug, upstream, verified, macos, electron, insiders-released] Rendering broken on macOS\n\n<!-- ⚠️⚠️ Do Not Delete This! bug_report_template ⚠️⚠️ -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- 🕮 Read our guide about submitting issues: https://github.com/microsoft/vscode/wiki/Submitting-Bugs-and-Suggestions -->\n<!-- 🔎 Search existing issues to avoid creating duplicates. -->\n<!-- 🧪 Test using the latest Insiders build to see if your issue has already been fixed: https://code.visualstudio.com/insiders/ -->\n<!-- 💡 Instead of creating your report here, use 'Report Issue' from the 'Help' menu in VS Code to pre-fill useful information. -->\n<!-- 🔧 Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Unknown - issue is intermittent and difficult to replicate consistently.\n\n<!-- 🪓 If you answered No above, use 'Help: Start Extension Bisect' from Command Palette to try to identify the cause. -->\n<!-- 📣 Issues caused by an extension need to be reported directly to the extension publisher. The 'Help > Report Issue' dialog can assist with this. -->\nVersion: 1.103.2 (Universal)\nCommit: 6f17636121051a53c88d3e605c491d22af2ba755\nDate: 2025-08-20T16:45:34.255Z\nElectron: 37.2.3\nElectronBuildId: 12035395\nChromium: 138.0.7204.100\nNode.js: 22.17.0\nV8: 13.8.500258-electron.0\nOS: Darwin arm64 24.5.0\n\nSteps to Reproduce:\n\n1. Use VSCode with multiple window open. \n2. Allow MacOS to sleep\n3. Wake up MacOS and navigate to VSCode\n4. VSCode intermittently will completely fail to render - Every window\n\nRendering completely broken:\n<img width=\"3829\" height=\"1511\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/79c5b4cd-a219-471f-8340-cf7e392a37a5\" />\n\nSorry this bug report is pretty sparse but I'm not able to use the help tools built into vscode to make a report. This rendering issue happened once or twice in the previous version of VSCode, but since the most recent update it is failing more often and requires a restart everytime.\n\nI do know that I haven't added any extensions in a while. Definitely in the last couple of updates.\n\nIf you have any suggestions on being able to get some diagnostic information via a terminal command or by setting a flag in VSCode I am happy to do so and to continue to update this issue. Unfortunately due to the nature of this bug I can't disable plugins as I am relying on them day to day."
+  ],
+  "decision": "**Decision:** search.\n(Used online search summary)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Todo widget rendering corrupts chat input on macOS Insiders\",\n  \"problem_summary\": \"When the Todo widget is displayed, the chat input area becomes non‑responsive, preventing user input.\",\n  \"evidence\": [\n    \"Issue #268985 – widget positioned above chat input causes input to freeze\",\n    \"Issue #270862 – styling changes to the widget trigger rendering glitches\",\n    \"Issue #261587 – maximized chat pane + Todo widget leads to input corruption\"\n  ],\n  \"suggested_improvements\": [\n    \"Inspect and adjust the CSS for the Todo widget to avoid overlaying the chat input area\",\n    \"Add layout guard to ensure the widget cannot render in the chat input region\",\n    \"Test the widget placement and styles on macOS Insiders to confirm resolution\",\n    \"Consider moving the widget to a dedicated sidebar or panel instead of inline\"\n  ],\n  \"possible_causes\": [\n    \"CSS/layout conflict between the Todo widget and the chat input UI components\",\n    \"Stacking context or z‑index mis‑management causing the widget to cover the input\",\n    \"A rendering bug specific to the macOS Insiders build that affects canvas or overlay elements\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #4/42 | ID: 304874 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses copy/cut failures in a VS\xa0Code sandbox with TypeScript, but it does not address or explain the clipboard leaking the sandbox script path, so it does not directly help solve the user’s issue.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet addresses a different issue (cmd‑c failure in Settings after overriding clipboardCopyAction) and does not cover the clipboard content leak of sandbox script paths reported by the user.'}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': '```json\n{\n  "relevant": false,\n  "sufficient": false,\n  "reason": "The snippet discusses listener leaks caused by MCP tools, not clipboard content leakage of sandbox scripts."\n}\n```'}
+
+🔎 Checking candidate #4
+{'relevant': True, 'sufficient': True, 'reason': 'The candidate issue describes the exact same clipboard content leak (sandbox path) when copying from iOS to macOS via Continuity into VS Code, including reproduction steps, environment, and expected vs actual results, making it both relevant and enough to craft a grounded brief.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem: Copying a chat conversation leaks the sandboxing script], [Symptoms: Clipboard contains sandbox script path and code], [Environment: macOS, VS Code Insiders], [Possible Category: Extensions], [Problem Type: Clipboard content leak]",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\"type\":\"bug\",\"title\":\"Continuity paste from iOS inserts sandboxed file path instead of plain text\",\"problem_summary\":\"Copying rich text from Safari on an iOS device and pasting it into VS Code on macOS results in a sandboxed file path being inserted into the editor, rather than the expected plain‑text content.\",\"evidence\":[\"Paste results in string like \\\"/var/folders/.../42514c636c7fe381d40102cae8877a9c82f0aeb8.rtfd\\\"\",\"Steps to reproduce: copy from iOS Safari → paste into VS Code on macOS (same iCloud account, continuity enabled)\",\"All extensions disabled, yet problem persists\",\"Environment: macOS Darwin arm64 23.5.0, VS Code Insiders 1.91.1\"],\"suggested_improvements\":[\"Verify VS Code’s paste handling for Continuity clipboard data and ensure it extracts plain text from rich‑text or RTFD payloads\",\"Add fallback logic to strip file URLs before inserting text\",\"Update documentation or settings to allow users to configure how Continuity data is interpreted\",\"Reproduce in minimal environment and file a bug to macOS/VS Code teams if not resolved\"],\"possible_causes\":[\"VS Code mis‑parses the macOS Continuity clipboard payload and treats a RTFD reference as a file path\",\"macOS Continuity provides a file URL for rich text that VS Code inadvertently inserts\",\"Bug in VS Code’s clipboard integration layer when handling iOS clipboard data\",\"Inadequate sanitization of pasted content from external sources\"],\"notes\":\"Further investigation needed to determine if the issue is isolated to Safari or occurs with other iOS apps; consider reproducing on different macOS versions and VS Code builds.\"}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #5/42 | ID: 304828 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet discusses a listener leak and performance slowdown when many events are emitted (MCP tools), which is related to the user’s event‑listener leak issue. However, it focuses on a different component (MCP) and does not provide specific guidance or fix for the chat terminal progress component, so it is relevant but not sufficient.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet shows a generic listener leak in chat components, but it does not reference the specific chat terminal tool progress component described by the user.'}
+
+🔎 Checking candidate #3
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet confirms a listener leak, shows the number of listeners (175), and provides a stack trace indicating where the leak originates, matching the symptoms described in the issue.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Potential listener leak in chat terminal tool progress component, [Symptoms] 1102+ listeners detected, [Environment] VSCode 1.112.0 on Linux/Mac/Windows, [Possible Category] Performance, [Problem Type] Event listener leak",
+  "collected": [
+    "[bug, verified, insiders-released, chat-mcp] Using MCP tools that produce a lot of output results in listener leaks and poor responsiveness\n\nType: <b>Bug</b>\n\n1. Open chat\n2. Use a MCP tool that provides a lot of output\n3. VS Code gets slow, has listener leak warnings\n\nExtension version: 0.33.3\nVS Code version: Code 1.106.2 (1e3c50d64110be466c0b4a45222e81d2c9352888, 2025-11-19T16:56:50.023Z)\nOS version: Linux x64 6.8.0-87-generic\nModes:\n\n<details><summary>Logs</summary>\n<pre>\nTrace: [RelatedExtensionsFilterProvider]::getFilters Filters: [[\"X-Copilot-RelatedPluginVersion-msvscodecpptools\",\"1.28.3\"],[\"X-Copilot-RelatedPluginVersion-msvscodecmaketools\",\"1.21.36\"],[\"X-Copilot-RelatedPluginVersion-msvscodemakefiletools\",\"0.12.17\"],[\"X-Copilot-RelatedPluginVersion-mspythonpython\",\"2025.18.0\"],[\"X-Copilot-RelatedPluginVersion-mspythonvscodepylance\",\"2025.9.1\"],[\"X-Copilot-RelatedPluginVersion-vscjavavscodejavapack\",\"0.30.5\"],[\"X-Copilot-RelatedPluginVersion-vscodetypescriptlanguagefeatures\",\"1.0.0\"]]\nTrace: [CopilotExtensionsFilterProvider]::getFilters Copilot Extension Version: 1.388.0, Copilot Chat Extension Version: 0.33.2, Completions Core Version: 1.378.1799\nTrace: [CopilotCompletionsFilterProvider]::getFilters Filters: []\nTrace: [BaseExperimentationService] Refreshed treatments on timer\nTrace: [GithubAccountFilterProvider]::getFilters SKU: free_faculty_quota, Internal Org: undefined, IsFcv1: false\nTrace: [RelatedExtensionsFilterProvider]::getFilters looking up related extensions\nTrace: [RelatedExtensionsFilterProvider]::getFilters Filters: [[\"X-Copilot-RelatedPluginVersion-msvscodecpptools\",\"1.28.3\"],[\"X-Copilot-RelatedPluginVersion-msvscodecmaketools\",\"1.21.36\"],[\"X-Copilot-RelatedPluginVersion-msvscodemakefiletools\",\"0.12.17\"],[\"X-Copilot-RelatedPluginVersion-mspythonpython\",\"2025.18.0\"],[\"X-Copilot-RelatedPluginVersion-mspythonvscodepylance\",\"2025.9.1\"],[\"X-Copilot-RelatedPluginVersion-vscjavavscodejavapack\",\"0.30.5\"],[\"X-Copilot-RelatedPluginVersion-vscodetypescriptlanguagefeatures\",\"1.0.0\"]]\nTrace: [CopilotExtensionsFilterProvider]::getFilters Copilot Extension Version: 1.388.0, Copilot Chat Extension Version: 0.33.2, Completions Core Version: 1.378.1799\nTrace: [CopilotCompletionsFilterProvider]::getFilters Filters: []\nTrace: [GithubAccountFilterProvider]::getFilters SKU: free_faculty_quota, Internal Org: undefined, IsFcv1: false\nTrace: [RelatedExtensionsFilterProvider]::getFilters looking up related extensions\nTrace: [RelatedExtensionsFilterProvider]::getFilters Filters: [[\"X-Copilot-RelatedPluginVersion-msvscodecpptools\",\"1.28.3\"],[\"X-Copilot-RelatedPluginVersion-msvscodecmaketools\",\"1.21.36\"],[\"X-Copilot-RelatedPluginVersion-msvscodemakefiletools\",\"0.12.17\"],[\"X-Copilot-RelatedPluginVersion-mspythonpython\",\"2025.18.0\"],[\"X-Copilot-RelatedPluginVersion-mspythonvscodepylance\",\"2025.9.1\"],[\"X-Copilot-RelatedPluginVersion-vscjavavscodejavapack\",\"0.30.5\"],[\"X-Copilot-RelatedPluginVersion-vscodetypescriptlanguagefeatures\",\"1.0.0\"]]\nTrace: [CopilotExtensionsFilterProvider]::getFilters Copilot Extension Version: 1.388.0, Copilot Chat Extension Version: 0.33.2, Completions Core Version: 1.378.1799\nTrace: [CopilotCompletionsFilterProvider]::getFilters Filters: []\nTrace: [BaseExperimentationService] Refreshed treatments on timer\nTrace: [GithubAccountFilterProvider]::getFilters SKU: free_faculty_quota, Internal Org: undefined, IsFcv1: false\nTrace: [RelatedExtensionsFilterProvider]::getFilters looking up related extensions\nTrace: [RelatedExtensionsFilterProvider]::getFilters Filters: [[\"X-Copilot-RelatedPluginVersion-msvscodecpptools\",\"1.28.3\"],[\"X-Copilot-RelatedPluginVersion-msvscodecmaketools\",\"1.21.36\"],[\"X-Copilot-RelatedPluginVersion-msvscodemakefiletools\",\"0.12.17\"],[\"X-Copilot-RelatedPluginVersion-mspythonpython\",\"2025.18.0\"],[\"X-Copilot-RelatedPluginVersion-mspythonvscodepylance\",\"2025.9.1\"],[\"X-Copilot-RelatedPluginVersion-vscjavavscodejavapack\",\"0.30.5\"],[\"X-Copilot-RelatedPluginVersion-vscodetypescriptlanguagefeatures\",\"1.0.0\"]]\nTrace: [CopilotExtensionsFilterProvider]::getFilters Copilot Extension Version: 1.388.0, Copilot Chat Extension Version: 0.33.2, Completions Core Version: 1.378.1799\nTrace: [CopilotCompletionsFilterProvider]::getFilters Filters: []\nTrace: [GithubAccountFilterProvider]::getFilters SKU: free_faculty_quota, Internal Org: undefined, IsFcv1: false\nTrace: [RelatedExtensionsFilterProvider]::getFilters looking up related extensions\nTrace: [RelatedExtensionsFilterProvider]::getFilters Filters: [[\"X-Copilot-RelatedPluginVersion-msvscodecpptools\",\"1.28.3\"],[\"X-Copilot-RelatedPluginVersion-msvscodecmaketools\",\"1.21.36\"],[\"X-Copilot-RelatedPluginVersion-msvscodemakefiletools\",\"0.12.17\"],[\"X-Copilot-RelatedPluginVersion-mspythonpython\",\"2025.18.0\"],[\"X-Copilot-RelatedPluginVersion-mspythonvscodepylance\",\"2025.9.1\"],[\"X-Copilot-RelatedPluginVersion-vscjavavscodejavapack\",\"0.30.5\"],[\"X-Copilot-RelatedPluginVersion-vscodetypescriptlanguagefeatures\",\"1.0.0\"]]\nTrace: [CopilotExtensionsFilterProvider]::getFilters Copilot Extension Version: 1.388.0, Copilot Chat Extension Version: 0.33.2, Completions Core Version: 1.378.1799\nTrace: [CopilotCompletionsFilterProvider]::getFilters Filters: []\nTrace: [BaseExperimentationService] Refreshed treatments on timer\nTrace: [GithubAccountFilterProvider]::getFilters SKU: free_faculty_quota, Internal Org: undefined, IsFcv1: false\nTrace: [RelatedExtensionsFilterProvider]::getFilters looking up related extensions\nTrace: [RelatedExtensionsFilterProvider]::getFilters Filters: [[\"X-Copilot-RelatedPluginVersion-msvscodecpptools\",\"1.28.3\"],[\"X-Copilot-RelatedPluginVersion-msvscodecmaketools\",\"1.21.36\"],[\"X-Copilot-RelatedPluginVersion-msvscodemakefiletools\",\"0.12.17\"],[\"X-Copilot-RelatedPluginVersion-mspythonpython\",\"2025.18.0\"],[\"X-Copilot-RelatedPluginVersion-mspythonvscodepylance\",\"2025.9.1\"],[\"X-Copilot-RelatedPluginVersion-vscjavavscodejavapack\",\"0.30.5\"],[\"X-Copilot-RelatedPluginVersion-vscodetypescriptlanguagefeatures\",\"1.0.0\"]]\nTrace: [CopilotExtensionsFilterProvider]::getFilters Copilot Extension Version: 1.388.0, Copilot Chat Extension Version: 0.33.2, Completions Core Version: 1.378.1799\nTrace: [CopilotCompletionsFilterProvider]::getFilters Filters: []\nTrace: [GithubAccountFilterProvider]::getFilters SKU: free_faculty_quota, Internal Org: undefined, IsFcv1: false\nTrace: [RelatedExtensionsFilterProvider]::getFilters looking up related extensions\nTrace: [RelatedExtensionsFilterProvider]::getFilters Filters: [[\"X-Copilot-RelatedPluginVersion-msvscodecpptools\",\"1.28.3\"],[\"X-Copilot-RelatedPluginVersion-msvscodecmaketools\",\"1.21.36\"],[\"X-Copilot-RelatedPluginVersion-msvscodemakefiletools\",\"0.12.17\"],[\"X-Copilot-RelatedPluginVersion-mspythonpython\",\"2025.18.0\"],[\"X-Copilot-RelatedPluginVersion-mspythonvscodepylance\",\"2025.9.1\"],[\"X-Copilot-RelatedPluginVersion-vscjavavscodejavapack\",\"0.30.5\"],[\"X-Copilot-RelatedPluginVersion-vscodetypescriptlanguagefeatures\",\"1.0.0\"]]\nTrace: [CopilotExtensionsFilterProvider]::getFilters Copilot Extension Version: 1.388.0, Copilot Chat Extension Version: 0.33.2, Completions Core Version: 1.378.1799\nTrace: [CopilotCompletionsFilterProvider]::getFilters Filters: []\nTrace: [BaseExperimentationService] Refreshed treatments on timer\nTrace: [GithubAccountFilterProvider]::getFilters SKU: free_faculty_quota, Internal Org: undefined, IsFcv1: false\nTrace: [RelatedExtensionsFilterProvider]::getFilters looking up related extensions\nTrace: [RelatedExtensionsFilterProvider]::getFilters Filters: [[\"X-Copilot-RelatedPluginVersion-msvscodecpptools\",\"1.28.3\"],[\"X-Copilot-RelatedPluginVersion-msvscodecmaketools\",\"1.21.36\"],[\"X-Copilot-RelatedPluginVersion-msvscodemakefiletools\",\"0.12.17\"],[\"X-Copilot-RelatedPluginVersion-mspythonpython\",\"2025.18.0\"],[\"X-Copilot-RelatedPluginVersion-mspythonvscodepylance\",\"2025.9.1\"],[\"X-Copilot-RelatedPluginVersion-vscjavavscodejavapack\",\"0.30.5\"],[\"X-Copilot-RelatedPluginVersion-vscodetypescriptlanguagefeatures\",\"1.0.0\"]]\nTrace: [CopilotExtensionsFilterProvider]::getFilters Copilot Extension Version: 1.388.0, Copilot Chat Extension Version: 0.33.2, Completions Core Version: 1.378.1799\nTrace: [CopilotCompletionsFilterProvider]::getFilters Filters: []\nTrace: [GithubAccountFilterProvider]::getFilters SKU: free_faculty_quota, Internal Org: undefined, IsFcv1: false\nTrace: [RelatedExtensionsFilterProvider]::getFilters looking up related extensions\nTrace: [RelatedExtensionsFilterProvider]::getFilters Filters: [[\"X-Copilot-RelatedPluginVersion-msvscodecpptools\",\"1.28.3\"],[\"X-Copilot-RelatedPluginVersion-msvscodecmaketools\",\"1.21.36\"],[\"X-Copilot-RelatedPluginVersion-msvscodemakefiletools\",\"0.12.17\"],[\"X-Copilot-RelatedPluginVersion-mspythonpython\",\"2025.18.0\"],[\"X-Copilot-RelatedPluginVersion-mspythonvscodepylance\",\"2025.9.1\"],[\"X-Copilot-RelatedPluginVersion-vscjavavscodejavapack\",\"0.30.5\"],[\"X-Copilot-RelatedPluginVersion-vscodetypescriptlanguagefeatures\",\"1.0.0\"]]\nTrace: [CopilotExtensionsFilterProvider]::getFilters Copilot Extension Version: 1.388.0, Copilot Chat Extension Version: 0.33.2, Completions Core Version: 1.378.1799\nTrace: [CopilotCompletionsFilterProvider]::getFilters Filters: []\nTrace: [BaseExperimentationService] Refreshed treatments on timer\nDebug: [context keys] Window state change. Needs offline check: false, active: true, focused: true.\nDebug: Related Information: Index not loaded yet triggering background calculation, returning 1ms\n</pre>\n</details>\n<details><summary>Request IDs</summary>\n<pre>\ne44b900a-de10-4ecf-9217-2717c9a33979\n8fc2b527-b6a1-4aad-9bb0-d4e0db8a5f58\n49e78892-4282-421c-9873-2ef5268cc6a7\nd13a0f14-5644-4e21-bbf8-6f9e28bd04c1\n79490dda-ee96-45ab-b170-4a93035ef7d1\nbaad48ff-b6c6-49bd-9b1f-9f36181c2cf4\n38bf5d5e-7089-4b1d-a03c-9becf26b759d\nedbc00f7-6834-44fb-b541-d8b72a645ea7\n0409b442-41d4-49d6-956e-8c2606db21bf\nf6680449-0dc6-40e0-b1ec-f12adbffa7c3\nd17fb2a2-45fb-492b-ae1e-caef8acdfb07\n4779e1b0-2329-4d57-acb4-affd5e8e1344\n70de16ee-ca2a-442a-9ad0-b5d7ac020432\ne9c2a873-2b05-4454-92ef-749e0dc34b91\n8d81b092-9fae-4604-a327-c11342ae21db\nfbe866a0-7704-4d7a-87ff-8a17a6983260\n92a370b9-55be-4784-ba78-6566d0e9d315\n7cf5b519-eafc-48e5-836b-3ad7148f5779\n5f38ae94-baef-482c-9d32-e4ed6be3a4a9\nb50a8a9e-c40b-414c-a0ef-6dec2e81930f\nf91737be-f5a9-4a2f-aa8c-f1a5a2834c5b\nf2421866-ee8f-4a37-a768-9f8deaddc893\n1d478dab-3647-4593-badf-dddb244f6751\n4e0a6b52-c856-4983-b329-90d31f011ef6\n5ce28652-0767-48a2-9a0a-0dd4424075af\n64feef6a-62e2-4054-ac5c-545517ce22ef\nf9abdabb-78af-420d-be11-377449bcb43f\n93edda7f-9b0c-4831-a041-34d9599d5bb6\n114f3b08-91f2-414f-b585-9fbd3a656f03\n4c1e9eae-63ed-455a-a632-8fdf7691c8fb\nfe85225c-cdbe-40c6-8386-3d154d552100\n51b33e18-35f1-4335-99dd-b2add298f034\n64b362c2-6d90-4ae8-ae20-24c367eb528c\n4b7b5d9d-e730-4414-861f-897137d8e1cf\n79eccfbe-830d-4612-8574-dbe5e434fe8b\na2af5ed1-2ef0-4fd7-82ec-a677a7735977\naa8e2953-cbf1-4144-b86e-cc0a17d9471d\na2284e9c-6e96-4997-956f-73138a45eb86\n6cd906b1-d018-408b-8d27-eee1d5ed0ab1\nf1cca8ab-d875-4750-bad5-222f767b1936\n0ac62c4d-603f-48bf-9261-49beb21af483\nc8c01b2e-d5f5-42a3-a502-c1184a576f0e\nf0d76876-0b1b-4c46-a4a1-deeff3f67a83\ncdfe27d3-87e8-4e8d-b781-bc791a388051\n250f6084-89aa-45c3-8100-8c7328857dd8\n74b0c336-1405-48e8-92fb-6a06d57fc037\n7f20b624-d262-468f-abb6-65eefb62f65e\naeac5ab4-ebdf-44a2-b806-2a21dbc0db36\nca72bd76-125a-4923-863b-86d5e6612486\n</pre>\n</details><details>\n<summary>System Info</summary>\n\n|Item|Value|\n|---|---|\n|CPUs|13th Gen Intel(R) Core(TM) i9-13900HX (32 x 2985)|\n|GPU Status|2d_canvas: enabled<br>direct_rendering_display_compositor: disabled_off_ok<br>gpu_compositing: enabled<br>multiple_raster_threads: enabled_on<br>opengl: enabled_on<br>rasterization: enabled<br>raw_draw: disabled_off_ok<br>skia_graphite: disabled_off<br>trees_in_viz: disabled_off<br>video_decode: enabled<br>video_encode: disabled_software<br>vulkan: disabled_off<br>webgl: enabled<br>webgl2: enabled<br>webgpu: disabled_off<br>webnn: disabled_off|\n|Load (avg)|2, 2, 2|\n|Memory (System)|94.14GB (59.41GB free)|\n|Process Argv|--crash-reporter-id a47bf8fb-8 ...[truncated]"
+  ],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\"type\":\"bug\",\"title\":\"Event listener leak in chat terminal tool progress component\",\"problem_summary\":\"The chat terminal tool progress component registers an excessive number of event listeners (over 1100) during use, indicating a memory/performance leak.\",\"evidence\":[\"\\\"event.ts:902 Error at xhi.create (event.ts:933:15)\\\"\",\"\\\"event.ts:1140:34\\\"\",\"\\\"testingExplorerView.ts:510:32\\\"\",\"\\\"Listeners count: 1102+\\\"\"],\"suggested_improvements\":[\"Ensure listeners are removed when the component is disposed or reinitialized.\",\"Refactor event registration to use one-time listeners or a cleanup method.\",\"Add instrumentation to log listener count during lifecycle events for debugging.\"],\"possible_causes\":[\"Listeners not being unsubscribed on component teardown.\",\"Repeated calls to onDidChange without proper removal.\",\"Bug in testingExplorerView.ts that creates listeners on each view refresh.\"],\"notes\":\"Observed during testing of issue 210848 comment; appears in VSCode 1.112.0 on all major OSes.\"}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #6/42 | ID: 304827 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'Snippet discusses a listener leak in the comments feature, not in notebook cell toolbars, so it does not directly address the user’s issue.'}
+
+🔎 Checking candidate #2
+{'relevant': True, 'sufficient': True, 'reason': "Provides concrete evidence of notebook listener leak matching user's issue."}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Listener leak in notebook cell toolbars, [Symptoms] excessive listeners and memory consumption, [Environment] VS Code 1.112.0 on Linux/macOS/Windows, [Possible Category] UI / Interaction, [Problem Type] Listener Leak",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Listener Leak in Notebook Cell Toolbars\",\n  \"problem_summary\": \"Scrolling through notebooks in VS Code results in a rapid increase of event listeners (up to 500+), causing memory pressure, slow response, and potential crashes.\",\n  \"evidence\": [\n    \"Potential listener LEAK detected, having 246 listeners already. MOST frequent listener (40): event.ts:828 Error\",\n    \"Call stack references notebookVisibleCellObserver.ts, notebookEditorWidget.ts, notebookViewModelImpl.ts, and notebookTextModel.ts\",\n    \"Similar leak observed in Code‑Insiders 1.79.0 with 508 listeners\",\n    \"Listeners are attached during cell rendering and execution status updates without proper cleanup\"\n  ],\n  \"suggested_improvements\": [\n    \"Add disposal logic in notebook cell rendering to detach listeners when a cell becomes invisible or the notebook is closed.\",\n    \"Use weak event listeners or a single shared event for execution status updates to reduce per‑cell registrations.\",\n    \"Implement a listener count audit in the notebook editor to warn when counts exceed a threshold.\",\n    \"Profile memory usage during notebook scroll to confirm the cleanup paths.\"\n  ],\n  \"possible_causes\": [\n    \"Repeated registration of onDidChangeExecution listeners for each cell without deregistration.\",\n    \"Missing disposal of ExecutionStatusBarItemController instances when cells are removed or hidden.\",\n    \"Circular references between cell observers and the notebook view model preventing garbage collection.\"\n  ],\n  \"notes\": \"Issue appears in VS Code 1.112.0 (Linux/macOS/Windows) and persists in Insiders 1.79.0. It likely affects performance on large notebooks with many cells.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #7/42 | ID: 304806 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet discusses a keyboard‑dispatch issue in the terminal (Cmd+Q broken and Caps\xa0Lock inserting symbols), which is related to the user’s Cmd+key shortcuts problem, but it does not address the generic raw‑keystroke leak to TUI applications and is version‑specific.'}
+
+🔎 Checking candidate #2
+{'relevant': True, 'sufficient': False, 'reason': 'Provides a generic method to log and inspect keyboard shortcuts in VS\u202fCode, which could help diagnose the problem, but it does not address terminal‑specific issues or the TUI context directly.'}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': 'The candidate knowledge discusses a different terminal bug (resize shortcuts broken in Insiders), unrelated to Cmd+key shortcuts failing after launching a TUI app.'}
+
+🔎 Checking candidate #4
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses a bug with reopening closed editors in terminal editors, which does not address the keyboard dispatch/shortcut issue described by the user.'}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes Return key escape codes, not Cmd+key shortcuts or raw keystrokes leaking to TUI, so it is not directly relevant or sufficient for this issue.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ search
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] Cmd+key shortcuts stop working in terminal editor after running a TUI application, [Symptoms] raw keystrokes leak to TUI, [Environment] VS Code 1.112.0 on macOS 26.3.1, [Possible Category] Terminal, [Problem Type] Keyboard dispatch issue
+🌍 Searching for: [Problem] Cmd+key shortcuts stop working in terminal editor after running a TUI application, [Symptoms] raw keystrokes leak to TUI, [Environment] VS Code 1.112.0 on macOS 26.3.1, [Possible Category] Terminal, [Problem Type] Keyboard dispatch issue
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The online summary explains the root cause and environment details, providing enough information to craft a structured issue brief.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Cmd+key shortcuts stop working in terminal editor after running a TUI application, [Symptoms] raw keystrokes leak to TUI, [Environment] VS Code 1.112.0 on macOS 26.3.1, [Possible Category] Terminal, [Problem Type] Keyboard dispatch issue",
+  "collected": [
+    "[bug, terminal-input] [macOS Apple Silicon] Caps Lock as input source switcher inserts symbols in terminal + Cmd+Q broken in 1.110\n\n<!-- ⚠️⚠️ Do Not Delete This! bug_report_template ⚠️⚠️ -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- 🕮 Read our guide about submitting issues: https://github.com/microsoft/vscode/wiki/Submitting-Bugs-and-Suggestions -->\n<!-- 🔎 Search existing issues to avoid creating duplicates. -->\n<!-- 🧪 Test using the latest Insiders build to see if your issue has already been fixed: https://code.visualstudio.com/insiders/ -->\n<!-- 💡 Instead of creating your report here, use 'Report Issue' from the 'Help' menu in VS Code to pre-fill useful information. -->\n<!-- 🔧 Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Yes/No\n\n<!-- 🪓 If you answered No above, use 'Help: Start Extension Bisect' from Command Palette to try to identify the cause. -->\n<!-- 📣 Issues caused by an extension need to be reported directly to the extension publisher. The 'Help > Report Issue' dialog can assist with this. -->\n## VS Code Version\n1.110.0 (February 2026)\n\n## OS\nmacOS (Apple Silicon / ARM64) - 15.7.3\n\n## Steps to Reproduce\n\n### Bug 1: Caps Lock inserts symbols in integrated terminal\n1. Configure Caps Lock as input source switcher (RU/EN) via System Settings → Keyboard → Input Sources\n2. Open VS Code integrated terminal\n3. Launch any CLI app (e.g. OpenCode)\n4. Press Caps Lock to switch keyboard layout\n\n**Expected:** Layout switches silently, no characters inserted \n**Actual:** Strange symbols / empty box characters are inserted into the terminal input\n\n### Bug 2: Cmd+Q does not quit VS Code\n1. Open VS Code 1.110\n2. Press Cmd+Q\n\n**Expected:** VS Code quits \n**Actual:** VS Code does not quit or hangs in background\n\n## Additional Context\n\n- Both bugs are **not reproducible in VS Code 1.109** and **1.100** — confirmed by rollback testing\n- Both bugs are **not reproducible in VSCodium 1.110** (same codebase, without Microsoft-specific patches)\n- Both bugs are **not reproducible in iTerm2** running the same CLI apps\n- This strongly suggests the regression is introduced by Microsoft-specific patches/telemetry layer in 1.110, not in the open-source Code-OSS base\n\n## Configuration\n```json\n\"terminal.integrated.gpuAcceleration\": \"off\",\n\"terminal.integrated.setLocaleVariables\": true,\n\"keyboard.dispatch\": \"keyCode\"",
+    "To troubleshoot keyboard shortcut problems, you can execute the command Developer: Toggle Keyboard Shortcuts Troubleshooting . This activates logging of dispatched keyboard shortcuts and opens the Output panel with the corresponding log file.\n\nYou can then press your desired keyboard shortcut and check what keyboard shortcut VS Code detects and what command is invoked.\n\nFor example, when pressing cmd+/ in a code editor on macOS, the logging output would be:\n\nCode/Command:\ncmd+/\n\nCode/Command:\n[KeybindingService]: / Received keydown event - modifiers: [meta], code: MetaLeft, keyCode: 91, key: Meta\n[KeybindingService]: | Converted keydown event - modifiers: [meta], code: MetaLeft, keyCode: 57 ('Meta')\n[KeybindingService]: \\ Keyboard event cannot be dispatched.\n[KeybindingService]: / Received keydown event - modifiers: [meta], code: Slash, keyCode: 191, key: /\n[KeybindingService]: | Converted keydown event - modifiers: [meta], code: Slash, keyCode: 85 ('/')\n[KeybindingService]: | Resolving meta+[Slash]\n[KeybindingService]: \\ From 2 keybinding entries, matched editor.action.commentLine, when: editorTextFocus && !editorReadonly, source: built-in.\n\nIn the example log, the first keydown event is for the MetaLeft key ( cmd ) and cannot be dispatched. The second keydown event is for the Slash key ( / ) and is dispatched as meta+[Slash] . There were two keyboard shortcut entries mapped from meta+[Slash] and the one that matched was for the command editor.action.commentLine , which has the when condition editorTextFocus && !editorReadonly and is a built-in keyboard shortcut entry.\n\nCode/Command:\nMetaLeft\n\nCode/Command:\ncmd\n\nCode/Command:\nSlash\n\nCode/Command:\n/\n\nCode/Command:\nmeta+[Slash]\n\nCode/Command:\nmeta+[Slash]\n\nCode/Command:\neditor.action.commentLine\n\nCode/Command:\nwhen\n\nCode/Command:\neditorTextFocus && !editorReadonly"
+  ],
+  "decision": "search\n(Used online search summary)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Cmd+Key Shortcuts Fail in Terminal After Running TUI Applications\",\n  \"problem_summary\": \"When a TUI (Text User Interface) program runs in VS Code’s integrated terminal, the terminal switches to a raw mode that consumes the first Meta (⌘) key press. As a result, editor shortcuts like ⌘ + / or ⌘ + Backspace never reach the editor and are instead interpreted as terminal shortcuts or ignored entirely.\",\n  \"evidence\": [\n    \"Observed in VS Code 1.112.0 on macOS 26.3.1 with TUI CLIs such as Claude Code and OpenAI Codex.\",\n    \"Issue does not appear in earlier VS Code or Cursor releases.\",\n    \"Raw mode in the terminal causes the first Meta key event to be swallowed, breaking chords.\"\n  ],\n  \"suggested_improvements\": [\n    \"Implement a hook that forwards Meta key events to the editor even while the terminal is in raw mode.\",\n    \"Add a configuration setting to disable raw mode for specific TUI processes or to toggle Meta key forwarding.\",\n    \"Provide a warning or notification when a TUI app is detected that may affect keybindings.\",\n    \"Update the terminal integration to preserve the original key dispatch logic across all supported macOS versions.\"\n  ],\n  \"possible_causes\": [\n    \"VS Code’s integrated terminal enters raw mode when a TUI application is detected, which is designed to give the TUI full control of input.\",\n    \"The first Meta key event is consumed by the terminal’s raw mode before it can bubble up to the editor.\",\n    \"Changes in macOS 26 or the recent VS Code 1.112 release introduced stricter handling of key events in raw mode.\"\n  ],\n  \"notes\": \"The bug appears only in the editor terminal context after a TUI runs; normal terminal use outside of TUI remains unaffected. Fixing this requires coordination between the terminal renderer and the editor’s key dispatch system.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #8/42 | ID: 304784 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a hover popup overlapping text, not an update button overlapping content in the release notes editor.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a settings‑editor overlap issue, not the release‑notes editor button covering content.'}
+
+🔎 Checking candidate #3
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet describes a button overlapping placeholder text, which directly matches the reported button-overlap issue and includes a screenshot that illustrates the overlap, giving enough context to craft a grounded issue or improvement brief.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Update button covers content; [Symptoms] button overlaps content when editor width is small; [Environment] VS Code release notes editor; [Possible Category] UI / Interaction; [Problem Type] Button overlap",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Update button and toolbar overlap content in the release notes editor on narrow viewports\",\n  \"problem_summary\": \"When the editor width is reduced, the Update button (and associated toolbar) overlaps the release notes content or placeholder text, obscuring information. This occurs in the release notes editor and also when long branch names are present and the toolbar is hovered.\",\n  \"evidence\": [\n    \"Screenshot from the issue showing the button overlapping the placeholder text\",\n    \"Description of the button covering content when the editor width is small\",\n    \"Observed behavior with a long branch name and hovered toolbar\"\n  ],\n  \"suggested_improvements\": [\n    \"Implement responsive layout logic that collapses or hides the Update button or toolbar when viewport width falls below a threshold\",\n    \"Reduce the button size or switch to a compact icon-only mode on small screens\",\n    \"Add a tooltip or inline help instead of overlaying the content\",\n    \"Ensure the placeholder text or release notes content has higher z-index or is not overlapped by positioned elements\",\n    \"Add CSS media queries or flexbox/grid adjustments to prevent overflow and overlapping\"\n  ],\n  \"possible_causes\": [\n    \"Absolute or fixed positioning of the button/toolbar without consideration for available width\",\n    \"Lack of responsive design handling for narrow viewports\",\n    \"CSS overflow settings that allow elements to extend beyond container bounds\",\n    \"Hard-coded widths or padding values that do not adapt to dynamic content like long branch names\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #9/42 | ID: 304778 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a macOS rendering issue, not extraneous problems in the Problems panel.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a delete dialog visual bug, not extraneous issues in the Problems panel.'}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a navigation bug (Go to Previous Problem goes to next problem), which does not address extraneous issues appearing in the Problems panel.'}
+
+🔎 Checking candidate #4
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet is a generic bug‑report template about a different problem (chat rendering), not related to extraneous problems in the Problems panel.'}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a context‑menu bug, not extraneous problems in the Problems panel.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ The collected information is insufficient to create a comprehensive issue brief. We need more details such as specific error messages, screenshots, or logs from the Problems panel, as well as steps to reproduce the issue. Therefore, we should **search** for additional data.
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] Irrelevant noise in Problems panel [Symptoms] Extraneous issues displayed after opening VS Code [Environment] macOS 26.4, VS Code 1.113.0 [Possible Category] UI / Interaction [Problem Type] Extraneous Issues
+🌍 Searching for: [Problem] Irrelevant noise in Problems panel [Symptoms] Extraneous issues displayed after opening VS Code [Environment] macOS 26.4, VS Code 1.113.0 [Possible Category] UI / Interaction [Problem Type] Extraneous Issues
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The summary addresses the key causes of extraneous problems in VS Code on macOS and matches the reported symptoms, providing enough context to create a concise issue brief.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Irrelevant noise in Problems panel [Symptoms] Extraneous issues displayed after opening VS Code [Environment] macOS 26.4, VS Code 1.113.0 [Possible Category] UI / Interaction [Problem Type] Extraneous Issues",
+  "collected": [],
+  "decision": "The collected information is insufficient to create a comprehensive issue brief. We need more details such as specific error messages, screenshots, or logs from the Problems panel, as well as steps to reproduce the issue. Therefore, we should **search** for additional data.\n(Used online search summary)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Extraneous diagnostics appear in the Problems panel\",\n  \"problem_summary\": \"After launching VS Code on macOS, the Problems panel lists irrelevant issues that are not caused by the current codebase. These entries are often triggered by extensions, workspace scripts, or stale extensions left behind by quarantine flags, and can also result from terminal process errors.\",\n  \"evidence\": [\n    \"Extraneous entries appear after opening VS Code\",\n    \"Issues often stem from active extensions or workspace scripts that flag unused modules (e.g., Microsoft vscode‑npm‑scripts reports a module named `xxx` incorrectly)\",\n    \"macOS quarantine flags can prevent updates or installations, leaving stale or mis‑configured extensions that generate spurious diagnostics\",\n    \"Terminal process failures such as \\\"terminal process failed to launch\\\" surface underlying shell errors that VS Code surfaces as problems\"\n  ],\n  \"suggested_improvements\": [\n    \"Disable or update extensions that produce false positives (e.g., vscode‑npm‑scripts)\",\n    \"Clear VS Code’s extension cache or reinstall extensions to remove stale configurations\",\n    \"Run `code --install-extension` after removing the quarantine flag on macOS\",\n    \"Configure the diagnostics setting to ignore non-essential warnings (e.g., adjust `javascript.implicitProjectConfig.checkJs` or disable ESLint rules that flag unused modules)\",\n    \"Ensure `node_modules` is up‑to‑date or clean it to prevent linting of missing modules\",\n    \"Check terminal launch configurations and resolve any shell startup errors to stop related diagnostics from surfacing\"\n  ],\n  \"possible_causes\": [\n    \"Misconfigured or outdated extensions that misinterpret workspace contents\",\n    \"Stale extension files left by macOS quarantine preventing proper update\",\n    \"Terminal process launch failures exposing hidden shell errors to the Problems panel\",\n    \"Workspace scripts that erroneously report unused or extraneous modules\"\n  ],\n  \"notes\": \"This behavior has been observed in VS Code 1.113.0 on macOS 26.4 and may be related to known issues with vscode‑npm‑scripts. Cleaning extensions and updating VS Code often resolves the noise.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #10/42 | ID: 304773 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet directly addresses the missing progress indication when creating a new chat session, matching the described ghost progress problem and providing reproduction steps and code context.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] In VS Code chat, clicking the '+' on an empty state creates a ghost progress session that cannot be opened; [Symptoms] Progress session appears but unopenable; [Environment] Unknown; [Possible Category] UI / Interaction; [Problem Type] UI glitch",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Chat status bar fails to show progress when creating a new session\",\n  \"problem_summary\": \"When a user creates a new chat session by clicking the '+' button in an empty chat state, the status bar no longer displays the in‑progress indicator, even though a progress session is started but cannot be opened.\",\n  \"evidence\": [\n    \"Fresh setup with `--transient` shows the 🐸 status bar entry correctly for responses.\",\n    \"Creating a new chat via '+' does not trigger the progress indicator.\",\n    \"Source reference: https://github.com/microsoft/vscode/blob/6f0ee8f52165de5eceb00c49c07662807bd5461b/src/vs/workbench/contrib/chat/browser/chatStatus.ts#L157\"\n  ],\n  \"suggested_improvements\": [\n    \"Emit a progress event when a new chat session is instantiated.\",\n    \"Ensure the status bar component subscribes to that event and updates the indicator accordingly.\",\n    \"Add a unit test verifying that the progress indicator appears during session creation.\",\n    \"Document the expected behavior in the chat README.\"\n  ],\n  \"possible_causes\": [\n    \"Missing event emission in the chat session creation logic.\",\n    \"Race condition where the status bar updates before the session is fully initialized.\",\n    \"Incorrect binding or filtering logic in chatStatus.ts that ignores new session events.\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #11/42 | ID: 304746 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'unrelated to dropdown/ fullscreen issue'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': "The snippet describes code block collapse while scrolling, not fullscreen dropdown exiting, so it does not help address the user's issue."}
+
+🔎 Checking candidate #3
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet describes a UI bug in Copilot Chat (close button disappearance on resize), which falls under the same UI/Interaction category as the user’s issue, but it does not address the specific problem of a dropdown exit from fullscreen, so it is not sufficient to generate a grounded issue or improvement brief.'}
+
+🔎 Checking candidate #4
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet addresses a dropdown reset when editing prompts, not fullscreen behavior.'}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet addresses a selection reset during chat streaming, not a dropdown causing loss of fullscreen mode. It does not provide relevant or sufficient context for the reported issue.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ **Decision: search**
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] Selecting dropdown in Copilot Chat fullscreen causes exit to main VS Code window; [Symptoms] loses fullscreen mode and returns to main window; [Environment] macOS 15.7.4, VS Code 1.113.0, Copilot Chat 0.41.1; [Possible Category] UI / Interaction; [Problem Type] Interaction bug
+🌍 Searching for: [Problem] Selecting dropdown in Copilot Chat fullscreen causes exit to main VS Code window; [Symptoms] loses fullscreen mode and returns to main window; [Environment] macOS 15.7.4, VS Code 1.113.0, Copilot Chat 0.41.1; [Possible Category] UI / Interaction; [Problem Type] Interaction bug
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The summary provides clear information about the UI issue, the affected component, environment details, and potential causes, which is sufficient to construct a structured issue brief.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Selecting dropdown in Copilot Chat fullscreen causes exit to main VS Code window; [Symptoms] loses fullscreen mode and returns to main window; [Environment] macOS 15.7.4, VS Code 1.113.0, Copilot Chat 0.41.1; [Possible Category] UI / Interaction; [Problem Type] Interaction bug",
+  "collected": [
+    "[bug, ux, *duplicate, chat] Copilot chat window close button disappears on window resizing\n\n<!-- Please search existing issues to avoid creating duplicates -->\n<!-- Please attach logs to help us diagnose your issue -->\n\n- Copilot Chat Extension Version:\n - Identifier: github.copilot, Version: 1.350.0\n - Identifier: github.copilot-chat, Version: 0.29.1\n- VS Code Version: 1.102.3\n - Commit: 488a1f239235055e34e673291fb8d8c810886f81\n - Date: 2025-07-29T03:00:23.339Z\n- OS: Darwin arm64 24.5.0\n- Feature (e.g. agent/edit/ask mode): Chat window\n- Selected model (e.g. GPT 4.1, Claude 3.7 Sonnet): n/a\n- Logs: n/a\n\nSteps to Reproduce (in both VS Code and Insiders):\n\n1. Open Copilot chat window\n2. Slide width of chat window smaller\n3. Watch the close button fall off the screen and be inaccessible - see pictures:\n\n<img width=\"408\" height=\"1027\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/2c59e2a5-4ef9-4e7b-b922-04cf67333749\" />\n<img width=\"268\" height=\"1030\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ce7040e4-1a11-4dba-aaec-b9b792b38162\" />"
+  ],
+  "decision": "**Decision: search**\n(Used online search summary)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Copilot Chat fullscreen exits to main window when selecting model dropdown\",\n  \"problem_summary\": \"When the Copilot Chat panel is in fullscreen mode on macOS, clicking the model‑selection dropdown causes VS Code to exit fullscreen and return to the main window.\",\n  \"evidence\": [\n    \"Observed on macOS 15.7.4 with VS Code 1.113.0 and Copilot Chat 0.41.1\",\n    \"Dropdown only appears in Copilot Chat panel (not in Copilot Labs)\",\n    \"Similar UI glitches occur when Copilot features are partially disabled or extensions are uninstalled\",\n    \"Online findings point to a rendering or focus‑handling bug that mis‑routes the click event\"\n  ],\n  \"suggested_improvements\": [\n    \"Add explicit focus handling to the dropdown to prevent triggering fullscreen exit\",\n    \"Ensure event propagation for the dropdown is limited to the Copilot Chat panel\",\n    \"Update CSS and layout to avoid overlapping or covering the fullscreen area\",\n    \"Add unit/visual regression tests for fullscreen interactions\",\n    \"Provide a toggle to hide the dropdown in fullscreen if usability is problematic\"\n  ],\n  \"possible_causes\": [\n    \"Click event bubbling up to VS Code's fullscreen toggle handler\",\n    \"Improperly scoped event listeners in the Copilot Chat extension\",\n    \"Rendering artifacts that cause the click to register outside the panel bounds\",\n    \"Conflict between Copilot Chat's UI framework and VS Code's native fullscreen API\"\n  ],\n  \"notes\": \"File a detailed issue on the Copilot Chat GitHub repository, including a minimal reproduction script and console logs. Verify if the problem persists on newer VS Code releases or other operating systems.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #12/42 | ID: 304648 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet demonstrates a related bug with non‑user‑invokable subagents, but it does not provide enough detail or a solution to craft a complete issue or improvement brief.'}
+
+🔎 Checking candidate #2
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet discusses hiding a disabled subagent from the tool picker using a when clause in package.json, which directly addresses the issue of a tool being enabled but not appearing—applicable to the execution_subagent scenario.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] The execution_subagent tool is enabled for agents that should not execute commands, [Symptoms] The tool does not appear in the tool picker but logs show it enabled, [Environment] Unknown, [Possible Category] Extensions, [Problem Type] Security misconfiguration.",
+  "collected": [
+    "[bug, verified, candidate] runSubagent tool does not find agents that are not userInvokable\n\nCreate a subagent that is not user invokable (hidden from the agent dropdown):\n```\n---\nname: Explorer Subagent\ndescription: Subagent specialized in searching then web\ntools: ['search', 'edit']\nuser-invokable: false\n---\n```\n\nIn the main agent ask:\n`Use the Explorer Subagent to find out about the weather tomorrow in Zurich`\n\n:bug: `Explorer` can not be found"
+  ],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Search subagent tool appears in tool picker even when disabled by setting\",\n  \"problem_summary\": \"The execution_subagent tool is still enabled in the agent’s runtime list and appears in the VS Code tool picker, despite the setting to disable it being applied. Logs indicate the tool is enabled, yet it should be hidden when the setting is off.\",\n  \"evidence\": [\n    \"Logs show the execution_subagent tool as enabled\",\n    \"The tool picker still displays the subagent even when the setting is disabled\",\n    \"Related discussion: https://github.com/microsoft/vscode/issues/291154\"\n  ],\n  \"suggested_improvements\": [\n    \"Add a `when` clause to the tool contribution in `package.json` to hide the subagent when the disabling setting is true.\",\n    \"Verify that the setting name used in the `when` clause matches the actual configuration key.\",\n    \"Add a unit test that ensures the tool is not shown in the picker when the setting is off.\"\n  ],\n  \"possible_causes\": [\n    \"Missing `when` clause in the tool contribution, causing the tool to be rendered regardless of the setting.\",\n    \"Configuration key mismatch between the setting and the `when` expression.\",\n    \"Caching or extension reload issue causing stale tool state to persist.\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #13/42 | ID: 304614 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses a missing badge in the SCM/Problems pane, not the upgrade prompt hiding when the title bar is disabled.'}
+
+🔎 Checking candidate #2
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet confirms a bug where the title‑bar update widget appears even when disabled, which explains why the upgrade prompt is missing. However, it does not address the missing badge or post‑upgrade widget.'}
+
+🔎 Checking candidate #3
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet directly mentions the absence of update indicators, which matches the user’s issue with missing upgrade prompts and badges.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Title bar disabled hides upgrade prompt, [Symptoms] badge not displayed and post-upgrade widget missing, [Environment] OS: unknown; VS Code version: unknown; hardware: unknown, [Possible Category] UI / Interaction, [Problem Type] fallback flow for upgrade",
+  "collected": [
+    "[bug, verified, insiders-released] title bar update widget shows briefly even though setting is off\n\nI have \"update.titleBar\": \"none\" but when a new update is available I still see the Update button show in the title bar briefly. \n\n![Image](https://github.com/user-attachments/assets/9f7ddc86-929f-4494-b944-350c550fde72)"
+  ],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "```json\n{\n  \"type\": \"bug\",\n  \"title\": \"Upgrade notifications and badge disappear when title bar is disabled\",\n  \"problem_summary\": \"When the user disables the native title bar in VS Code, the UI stops showing the upgrade badge on the gear icon and the post‑upgrade widget never appears, so users have no visual indication of available updates.\",\n  \"evidence\": [\n    \"Screenshot of the main UI with a disabled title bar shows no badge over the gear icon (see image with width 2672px).\",\n    \"Screenshot of the settings page with the title bar disabled shows no upgrade prompt or widget (see image with width 435px).\"\n  ],\n  \"suggested_improvements\": [\n    \"Restore the upgrade badge rendering logic to work regardless of the title bar setting.\",\n    \"Add a fallback display path for upgrade notifications when the title bar is disabled, e.g., a small toast or an icon in the status bar.\",\n    \"Ensure the badge component does not get clipped by CSS overflow rules applied when the title bar is hidden.\",\n    \"Add unit tests that simulate the disabled title bar scenario and verify the badge and post‑upgrade widget appear.\",\n    \"Provide a diagnostic log entry when the upgrade prompt is suppressed due to title bar settings.\"\n  ],\n  \"possible_causes\": [\n    \"CSS rules that hide overflow or clip the gear icon area when the title bar is disabled, preventing the badge from rendering.\",\n    \"Conditional logic in the upgrade notification module that skips rendering when the native title bar is turned off.\",\n    \"Bug introduced in a recent insiders build that changes the badge placement calculation.\",\n    \"A regression where the badge component is incorrectly bound to the title bar container instead of the gear icon.\"\n  ],\n  \"notes\": \"The issue was reported on an unknown OS and VS Code version. The problem is likely reproducible in any build where the title bar can be disabled, affecting both stable and insiders releases.\"\n}\n```",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #14/42 | ID: 304574 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': "The snippet directly describes the same bug (sub‑agents losing the 'agent' tool), includes test setups, environment details, and a large example, giving enough context to draft an issue or improvement brief."}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Custom agents sub-agents lose declared tools when run as third-party agents inside VS Code; [Symptoms] sub-agent reports only file-viewing tools, ignoring tools property; [Environment] VS Code Insiders 1.113.0-insider on Linux x64 (WSL2); [Possible Category] Extensions; [Problem Type] Tool Access Restriction",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Sub‑agents miss declared tools (e.g., `agent` tool) when spawned via third‑party agents\",\n  \"problem_summary\": \"When a custom agent creates a sub‑agent (via the `runSubAgent` tool or the `agent` tool), the new sub‑agent reports only a limited set of file‑viewing tools and omits any tools declared in the parent agent’s `tools` list, including the `agent` tool itself. This occurs in VS Code Insiders 1.113.0‑insider on Linux/WSL2 and across multiple models and agent configurations.\",\n  \"evidence\": [\n    \"Log shows `dispatcherAgent` includes `agent` tool in its `tools` array, yet the spawned `dispatcher` sub‑agent’s tool list contains only file‑viewing tools.\",\n    \"Test Setup 1: `/dispatch` prompt with `agent` tool creates `dispatcher` sub‑agent that loses the `agent` tool.\",\n    \"Test Setup 2: Directly using the `dispatcher` agent spawns a `codeSearcher` sub‑agent that also lacks the `agent` tool.\",\n    \"The issue persists across different VS Code Insider builds and multiple LLMs (Opus 4.5, Gemini 3 Flash, Gemini 3 Pro).\"\n  ],\n  \"suggested_improvements\": [\n    \"Restore correct tool inheritance for sub‑agents: ensure all tools from the parent agent are passed to the child agent’s tool registry.\",\n    \"Add explicit validation and logging for tool propagation when a sub‑agent is created.\",\n    \"Provide a configuration flag or extension setting to control whether sub‑agents inherit tools.\",\n    \"Re‑examine the sandboxing logic that might strip tools from third‑party agents.\"\n  ],\n  \"possible_causes\": [\n    \"A recent change in the agent sandbox that inadvertently removes non‑file‑viewing tools for sub‑agents.\",\n    \"Tool registration order issue: the parent’s tool list is not yet fully resolved before spawning the sub‑agent.\",\n    \"An extension bug in the VS Code API that filters tools for security reasons, mistakenly excluding the `agent` tool.\",\n    \"Conflict between the `runSubAgent` tool and the extension’s internal agent creation logic.\"\n  ],\n  \"notes\": \"Reproduced consistently across models and builds; likely a regression introduced in a recent extension update. Immediate attention needed for users who rely on nested agent workflows.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #15/42 | ID: 304551 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet describes a very similar Copilot Chat mis‑routing issue (searching the whole notebook instead of a specific cell) and includes the same kind of symptom and logs, making it directly useful for framing the issue or improvement brief.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Notebook cell content sent to chat, [Symptoms] content appears in chat pane instead of notebook, [Environment] Linux x64, VS Code 1.112.0, Sonnet 4.6, [Possible Category] Extensions, [Problem Type] Notebook edit misrouting",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Copilot Chat fails to locate referenced notebook cell content and misroutes output to chat pane\",\n  \"problem_summary\": \"When a user asks Copilot Chat to reference or modify code in a specific Jupyter notebook cell, the extension either shows the content in the chat pane instead of the notebook and searches the entire notebook rather than the target cell, producing incorrect or missing results.\",\n  \"evidence\": [\n    \"Log snippet showing Copilot reading from an incorrect VS Code resource path (vscode-file://vscode-app/.../workbench.html) instead of the notebook file.\",\n    \"Screenshot reference indicating the content appears in the chat pane.\",\n    \"Reported behavior persists across multiple notebook sizes (180 KB example) and Copilot Chat versions (0.27.2).\",\n    \"Logs demonstrate repeated attempts to read large line ranges (0‑101, 102‑201, 751‑1001) without focusing on the cell containing the requested code.\",\n    \"Environment: Linux x64, VS Code 1.112.0, Ubuntu 24.04, Claude Sonnet 4 model.\"\n  ],\n  \"suggested_improvements\": [\n    \"Update Copilot Chat to correctly resolve the notebook file path when parsing cell content.\",\n    \"Implement cell‑level context extraction so that requests for code in a specific cell trigger targeted reads rather than full‑notebook scans.\",\n    \"Add a UI indication of the cell location when the chat outputs code, to avoid confusion with the chat pane.\",\n    \"Provide a diagnostic option that logs the resolved notebook path and the cell ranges being examined for easier debugging.\"\n  ],\n  \"possible_causes\": [\n    \"A bug in the path resolution logic that mistakenly references VS Code internal resources instead of the notebook file.\",\n    \"The current algorithm for determining relevant cell context may incorrectly default to searching the entire notebook.\",\n    \"Compatibility issue between the Copilot Chat extension version 0.27.2 and VS Code 1.112.0 or newer.\",\n    \"Insufficient handling of multi‑cell notebooks where the requested cell is deep within the file.\"\n  ],\n  \"notes\": \"The issue appears reproducible on Ubuntu 24.04 with VS Code 1.112.0 and Copilot Chat 0.27.2. It affects all models (Claude Sonnet 4, GPT‑4, etc.) and occurs in Agent mode. A fix should ensure proper cell context routing and accurate file path handling.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #16/42 | ID: 304550 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet mentions a status‑bar bug for incoming/outgoing changes, which is related to SCM updates, but it does not directly address or explain why the SCM view itself stays stale after external changes.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a bug in the SCM Graph view refreshing during editor tab switches, not an issue about the SCM view not updating after external file changes. Thus it is not relevant or sufficient for the requested brief.'}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses a refresh bug for the history graph, not the stale SCM view caused by external changes.'}
+
+🔎 Checking candidate #4
+{'relevant': True, 'sufficient': True, 'reason': 'matches SCM auto‑refresh bug with external changes'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] SCM view not updated when external changes, [Symptoms] SCM view stale while git status shows changes, [Environment] VS Code, [Possible Category] Source Control, [Problem Type] External changes not reflected in SCM view",
+  "collected": [
+    "[bug, git] SCM consolidated status bar item no longer reflects incoming/outgoing changes\n\n1. Have incoming changes \n2. Run **Git: Fetch** command\n3. :bug: status bar no longer shows incoming changes\n\n<img width=\"662\" alt=\"image\" src=\"https://github.com/microsoft/vscode/assets/30305945/a4998732-77ef-48f6-984a-bcb240ecdd8b\">"
+  ],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "```json\n{\n  \"type\": \"bug\",\n  \"title\": \"SCM Graph view fails to refresh with new upstream commits\",\n  \"problem_summary\": \"When upstream/main receives new commits, VS Code Insiders' SCM graph view keeps the old badge and does not display the new commits, even after manually fetching or clicking refresh buttons. The view only updates after a full window reload.\",\n  \"evidence\": [\n    \"Graph badge disappears after remote updates (image: https://github.com/user-attachments/assets/faca9e22-7913-4675-8f41-9928bfc90075)\",\n    \"Manual fetch and refresh actions do not trigger update\",\n    \"Window reload restores correct graph state\",\n    \"Configuration shows correct merge-base: branch.main.vscode-merge-base = upstream/main\"\n  ],\n  \"suggested_improvements\": [\n    \"Invalidate and rebuild the graph cache whenever a fetch or pull from any remote occurs.\",\n    \"Listen to Git status change events (e.g., `git status` output) to trigger automatic refresh.\",\n    \"Provide a quick toggle to force refresh the graph without reloading the window.\",\n    \"Log a warning if the graph fails to update after a fetch to aid debugging.\"\n  ],\n  \"possible_causes\": [\n    \"Graph view cache is not tied to Git remote update events.\",\n    \"The refresh command only updates UI elements that are explicitly marked dirty, missing the graph data.\",\n    \"Insiders build may have a regression in the graph rendering engine that skips re-rendering after background fetch.\",\n    \"Missing event hook for remote changes in the SCM extension.\"\n  ],\n  \"notes\": \"Reproducible in VS Code Insiders 1.96.0 on Windows 10. The issue is specific to the graph view; other SCM panels (e.g., status list) correctly reflect changes.\"\n}\n```",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #17/42 | ID: 304546 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet directly states that GitHub Copilot Chat causes extreme slowness and extension‑host lag with an uncaught error, which matches the user’s reported symptoms.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Unresponsive extension host due to github.copilot-chat hogging CPU, [Symptoms] causes other extensions like Modus Toolbox Assistant to hang while fetching manifest data and shows high CPU usage warnings, [Environment] Windows 11, VS Code 1.120.0, [Possible Category] Performance, [Problem Type] Extension resource hogging.",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\"type\":\"bug\",\"title\":\"Unresponsive extension host caused by GitHub Copilot Chat CPU hogging\",\"problem_summary\":\"When GitHub Copilot Chat is active, the VS Code extension host becomes sluggish, causing typing, saving, and UI lag; the issue is accompanied by a high CPU usage warning and an uncaught error reported in the Running Extensions panel.\",\"evidence\":[\"GitHub Copilot Chat activation time ~2000–2300 ms\",\"Uncaught error shown in Developer: Show Running Extensions\",\"High CPU usage warnings, CPU usage spikes when Copilot Chat is enabled\",\"Disabling Copilot Chat restores normal performance\",\"Issue reproducible on Windows 11 with VS Code 1.120.0, even with minimal extensions\"],\"suggested_improvements\":[\"Upgrade to the latest Copilot Chat version if available\",\"Disable or uninstall Copilot Chat to confirm causality\",\"Check the Copilot Chat error log in the Output panel for detailed stack traces\",\"Limit the number of concurrent requests or reduce background activity via Copilot settings\",\"Report the error to the Copilot extension maintainers with reproduction steps\",\"Consider disabling \\\"Run all extensions on startup\\\" in settings.json to reduce load\"],\"possible_causes\":[\"Internal loop or blocking operation in Copilot Chat code\",\"Unhandled exception causing the extension host to pause\",\"Excessive background token generation or request polling\",\"Memory leak or resource exhaustion in Copilot Chat\"],\"notes\":\"The problem does not occur when all extensions are disabled, confirming it is specific to the Copilot Chat extension. The issue appears stable across recent VS Code releases and may be mitigated by disabling or updating the extension.\"}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #18/42 | ID: 304530 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet describes exactly the same issue (terminal awaiting input not working for background terminals) and matches the user’s environment (macOS, VS\u202fCode Insiders).'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Terminal hangs when agent uses read task tool, [Symptoms] shows “Terminal is awaiting input” and does not resume, [Environment] VS Code Insiders 1.113.0-insider on macOS 25.2.0 Apple M4 Max, [Possible Category] Terminal, [Problem Type] Input blocking",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"\\\"Terminal is awaiting input\\\" does not trigger for background terminal processes\",\n  \"problem_summary\": \"When a shell command that requires user input (e.g., a `read` prompt) is launched in the background, VS Code’s terminal does not display the \\\"Terminal is awaiting input\\\" notification, even though it appears for the same command in the foreground.\",\n  \"evidence\": [\n    \"Screenshot of background `read` command without notification: https://github.com/user-attachments/assets/850aa79c-6648-4c0e-9d11-c14462135461\",\n    \"Description of background vs. foreground behavior in the issue statement\",\n    \"Reference to TPI #290583\"\n  ],\n  \"suggested_improvements\": [\n    \"Extend the awaiting‑input detection logic to monitor background processes, not just the foreground shell.\",\n    \"Trigger the notification when any process in the terminal session is blocked on standard input, regardless of its process group.\",\n    \"Provide an optional setting to enable or disable awaiting‑input for background tasks.\",\n    \"Add diagnostics to log when a background process is detected to be awaiting input, aiding future debugging.\"\n  ],\n  \"possible_causes\": [\n    \"The current implementation checks only the foreground shell’s process group for blocking I/O.\",\n    \"Background jobs are launched with a different session ID, so VS Code’s input monitor misses them.\",\n    \"The terminal integration may rely on pty status that is not updated for background jobs.\",\n    \"The `read` command may not send the expected signals to the VS Code terminal when run in the background.\"\n  ],\n  \"notes\": \"This issue is tracked in TPI #290583 and is relevant for all VS Code Insider builds, including 1.113.0-insider on macOS.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #19/42 | ID: 304525 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': False, 'reason': 'It describes a similar ESC‑key not closing a dialog issue (the Accessible View), but not the specific ‘no update available’ dialog, so it’s partially useful but not enough on its own.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': "The snippet discusses an accessibility instruction in the terminal view, not the Escape key behavior of the 'no update available' dialog."}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': 'unrelated to ESC key dialog closure'}
+
+🔎 Checking candidate #4
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes an accessibility signal issue unrelated to an Escape key closing a dialog, so it is neither relevant nor sufficient for the given problem.'}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a Copilot chat bug, not the Escape key issue for the update dialog.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ The collected information describes a different issue (ESC not closing the Accessible View when focus is on action buttons) and does not address the user’s problem about the “no update available” dialog. Therefore, the data is insufficient to create a meaningful brief for the reported issue.
+
+**Decision:** search.
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] Escape key fails to close the 'no update available' dialog when not focused [Symptoms] dialog remains open after ESC [Environment] VS Code Insiders on unknown OS [Possible Category] UI / Interaction [Problem Type] Dialog close key not working
+🌍 Searching for: [Problem] Escape key fails to close the 'no update available' dialog when not focused [Symptoms] dialog remains open after ESC [Environment] VS Code Insiders on unknown OS [Possible Category] UI / Interaction [Problem Type] Dialog close key not working
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The summary provides sufficient details on the issue, symptoms, environment, and likely cause to create a structured VS Code issue brief.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Escape key fails to close the 'no update available' dialog when not focused [Symptoms] dialog remains open after ESC [Environment] VS Code Insiders on unknown OS [Possible Category] UI / Interaction [Problem Type] Dialog close key not working",
+  "collected": [
+    "[bug, verified, accessibility, insiders-released] [Accessibility] Pressing ESC key on action buttons does not close Accessible View\n\nType: <b>Bug</b>\n\nWhen Accessible view (Alt+F2) is activated against inline suggestion, users can focus in some action buttons via Shift+Tab key. If users want to close the current Accessible View, they have to press Tab key again to focus on the Accessible View first because ESC doesn't close the Accessible View when users' current focus in action buttons. This is inconvenient and the action buttons and Accessible View need to be grouped together as one widget so users can close it via ESC key regardless of their current focus.\n\nVS Code version: Code - Insiders 1.82.0-insider (ccb95fd921349023027a0df25ed291b0992b9a18, 2023-08-17T05:33:29.141Z)\nOS version: Windows_NT x64 10.0.22621\nModes:\n\n<details>\n<summary>System Info</summary>\n\n|Item|Value|\n|---|---|\n|CPUs|11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz (8 x 2611)|\n|GPU Status|2d_canvas: enabled<br>canvas_oop_rasterization: enabled_on<br>direct_rendering_display_compositor: disabled_off_ok<br>gpu_compositing: enabled<br>multiple_raster_threads: enabled_on<br>opengl: enabled_on<br>rasterization: enabled<br>raw_draw: disabled_off_ok<br>video_decode: enabled<br>video_encode: enabled<br>vulkan: disabled_off<br>webgl: enabled<br>webgl2: enabled<br>webgpu: enabled|\n|Load (avg)|undefined|\n|Memory (System)|15.71GB (5.55GB free)|\n|Process Argv|. --crash-reporter-id b05b88e5-8894-4031-ae34-fa034ebddea9|\n|Screen Reader|yes|\n|VM|0%|\n</details><details><summary>Extensions (89)</summary>\n\nExtension|Author (truncated)|Version\n---|---|---\nandroid-dev-ext|ade|1.3.2\nBookmarks|ale|13.4.1\nopenscad|Ant|1.2.1\nspellright|ban|3.0.116\nzoterolatex|bna|0.4.1\nmermaid-markdown-syntax-highlighting|bpr|1.5.2\ndoxdocgen|csc|1.4.0\nvscode-markdownlint|Dav|0.51.0\nvscode-eslint|dba|2.4.2\nvscode-quick-select|dba|0.2.9\nvscode-deno|den|3.20.0\ngitlens|eam|14.2.1\nEditorConfig|Edi|0.16.4\nprettier-vscode|esb|10.1.0\nvscode-google-translate|fun|1.4.13\ncodespaces|Git|1.14.15\ncopilot|Git|1.104.343\ncopilot-chat|Git|0.7.2023081701\nremotehub|Git|0.60.0\nvscode-github-actions|git|0.26.1\nvscode-pull-request-github|Git|0.70.0\neasy-snippet|inu|0.6.3\npath-autocomplete|ion|1.24.1\nlatex-workshop|Jam|9.13.4\nlilypond-syntax|jea|0.1.1\nscheme|jea|0.2.0\nbetter-cpp-syntax|jef|1.17.2\ngoogle-search|kam|0.0.1\nvscode-lua-format|Koi|1.3.8\nlilypond-formatter|lhl|0.2.3\nlilypond-pdf-preview|lhl|0.2.8\nlilypond-snippets|lhl|0.1.1\nvslilypond|lhl|1.7.3\nzotero|mbl|0.1.10\ngit-graph|mhu|1.30.0\nvscode-docker|ms-|1.26.0\nblack-formatter|ms-|2023.4.1\nflake8|ms-|2023.6.0\nisort|ms-|2023.11.12061012\npython|ms-|2023.14.0\nvscode-pylance|ms-|2023.8.30\njupyter|ms-|2023.7.1002162226\njupyter-keymap|ms-|1.1.2\njupyter-renderers|ms-|1.0.17\nvscode-jupyter-cell-tags|ms-|0.1.8\nvscode-jupyter-slideshow|ms-|0.1.5\nremote-containers|ms-|0.305.0\nremote-ssh|ms-|0.105.1\nremote-ssh-edit|ms-|0.86.0\nremote-wsl|ms-|0.81.0\nvscode-remote-extensionpack|ms-|0.24.0\nazure-repos|ms-|0.36.0\ncmake-tools|ms-|1.15.31\ncpptools|ms-|1.17.3\ncpptools-extension-pack|ms-|1.3.0\njs-debug-nightly|ms-|2023.8.1117\npowershell|ms-|2023.6.0\nremote-repositories|ms-|0.38.1\nvscode-github-issue-notebooks|ms-|0.0.129\nvscode-selfhost-test-provider|ms-|0.3.16\nvscode-serial-monitor|ms-|0.10.0\nvsliveshare|ms-|1.0.5877\nresourcemonitor|mut|1.0.7\nautodocstring|njp|0.6.1\npandocciter|not|0.10.3\nshiny-python|Pos|0.1.2\nshinyuieditor|pos|0.4.3\nquarto|qua|1.94.0\nr-debugger|RDe|0.5.4\njava|red|1.21.0\nvscode-xml|red|0.26.1\nr|REd|2.8.1\nmulti-command|ryu|1.6.0\nvscode-deepl|soe|1.0.6\nabc-music|sof|0.4.0\nlua|sum|3.6.26\nlatex-utilities|tec|0.4.10\ncmake|twx|0.0.17\nerrorlens|use|3.13.0\nintellicode-api-usage-examples|Vis|0.2.7\nvscodeintellicode|Vis|1.2.30\nvscode-arduino|vsc|0.6.0\nvscode-java-debug|vsc|0.53.0\nvscode-java-dependency|vsc|0.23.1\nvscode-java-pack|vsc|0.25.13\nvscode-java-test|vsc|0.39.1\nvscode-maven|vsc|0.42.0\nmarkdown-all-in-one|yzh|3.5.1\ngrammarly|znc|0.22.1\n\n(1 theme extensions excluded)\n\n</details><details>\n<summary>A/B Experiments</summary>\n\n```\nvsliv695:30137379\nvsins829:30139715\nvsliv368:30146709\nvsreu685:30147344\npython383cf:30185419\nvspor879:30202332\nvspor708:30202333\nvspor363:30204092\nvstes627:30244334\nvslsvsres303:30308271\npythontb:30258533\npythonptprofiler:30281269\nvshan820:30294714\nvscod805cf:30301675\nbridge0708:30335490\nbridge0723:30353136\nvsaa593:30376534\npythonvs932:30404738\npy29gd2263:30784851\nvsclangdf:30492506\nc4g48928:30535728\ndsvsc012:30540252\npynewext54:30618038\na9j8j154:30646983\nshowlangstatbar:30737417\necj1e332:30687743\npythonfmttext:30716741\npythoncmvfstr:30726892\nfixshowwlkth:30771523\nshowindicator:30805243\npythongtdpath:30726887\ni26e3531:30792625\ngsofa:30797620\nwelcomedialog:30812478\npythonnosmt12:30779711\npythonidxpt:30768918\npythonnoceb:30776497\ncopilotsettingt:30808721\ndsvsc013:30777762\ndsvsc014:30777825\ndiffeditorv2:30786206\npythonmpsinfo:30815194\n\n```\n\n</details>\n\n<!-- generated by issue reporter -->"
+  ],
+  "decision": "The collected information describes a different issue (ESC not closing the Accessible View when focus is on action buttons) and does not address the user’s problem about the “no update available” dialog. Therefore, the data is insufficient to create a meaningful brief for the reported issue.\n\n**Decision:** search.\n(Used online search summary)",
+  "bug_report": "```json\n{\n  \"type\": \"bug\",\n  \"title\": \"Escape key does not close the 'no update available' dialog in VS Code Insiders\",\n  \"problem_summary\": \"When the 'no update available' dialog is open, pressing the Escape key fails to dismiss it unless the dialog has keyboard focus.\",\n  \"evidence\": [\n    \"MDN specifies that a <dialog> element should close on the Escape key.\",\n    \"UI libraries such as radix‑ui report that the Escape handler is bypassed when focusable controls (e.g., <select>) are inside a dialog.\",\n    \"Similar key‑handling regressions have been observed in other frameworks when complex DOM updates interfere with keyboard event flow.\"\n  ],\n  \"suggested_improvements\": [\n    \"Implement a global keydown listener that triggers the dialog close routine when Escape is pressed, regardless of focus.\",\n    \"Ensure the dialog’s focus‑trapping logic allows Escape events to bubble to the close handler.\",\n    \"Add unit tests that verify dialog closure on Escape in various focus states.\",\n    \"Review and adjust any dynamic component updates that might interfere with event propagation.\"\n  ],\n  \"possible_causes\": [\n    \"Improper focus‑trapping logic that prevents Escape events from reaching the dialog.\",\n    \"Event propagation being blocked or overridden by a parent component.\",\n    \"Dynamic updates to the dialog’s DOM that reset event listeners or focus state.\",\n    \"A bug in VS Code Insiders’ integration of the dialog component on certain platforms.\"\n  ],\n  \"notes\": \"The issue occurs in VS Code Insiders; OS is unspecified.\"\n}\n```",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #20/42 | ID: 304488 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': "The snippet reports an integration test failure with a specific assertion error in VS\xa0Code's API, matching the user’s issue type and providing location, expected vs actual values, and build logs for context."}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Integration test failure; [Symptoms] AssertionError Unexpected output in terminal; [Environment] Windows, VS Code unknown; [Possible Category] Extensions; [Problem Type] Test assertion error",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"onDidChangeVisibleTextEditors fires too many times during integration tests\",\n  \"problem_summary\": \"During VS Code API integration tests, the `onDidChangeVisibleTextEditors` event is emitted three times instead of the expected single time, causing an assertion failure (3 !== 1).\",\n  \"evidence\": [\n    \"AssertionError at extensions\\\\vscode-api-tests\\\\out\\\\singlefolder-tests\\\\window.test.js:88:16\",\n    \"Build logs: https://dev.azure.com/monacotools/Monaco/_build/results?buildId=322802&view=logs&j=0304f796-6596-5b42-8573-3d5da85bc4a5&t=3408b3dd-e53f-56a6-90e3-02cabcda26b7\",\n    \"Build logs: https://dev.azure.com/monacotools/Monaco/_build/results?buildId=322845&view=logs&j=0304f796-6596-5b42-8573-3d5da85bc4a5&t=3408b3dd-e53f-56a6-90e3-02cabcda26b7\",\n    \"Build logs: https://dev.azure.com/monacotools/Monaco/_build/results?buildId=322862&view=logs&j=0304f796-6596-5b42-8573-3d5da85bc4a5&t=3408b3dd-e53f-56a6-90e3-02cabcda26b7\"\n  ],\n  \"suggested_improvements\": [\n    \"Ensure that each test registers the `onDidChangeVisibleTextEditors` listener only once and disposes it after the test completes.\",\n    \"Add safeguards to prevent duplicate subscriptions when the same extension is activated multiple times in a single test run.\",\n    \"Add a counter or log for subscription creation to detect and warn about unintended multiple registrations.\",\n    \"Run the integration test with the `--force` flag to clean the workspace state between tests.\"\n  ],\n  \"possible_causes\": [\n    \"Duplicate listener registration due to repeated activation of the API extension within the same test session.\",\n    \"Listeners not being disposed properly after each test, causing cumulative event emissions.\",\n    \"Multiple windows or editors opened during the test, each triggering the event separately.\"\n  ],\n  \"notes\": \"The issue appears to be isolated to the integration test environment and does not affect normal VS Code usage. A quick check of the test harness for proper disposal logic should resolve the failure.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #21/42 | ID: 304481 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet discusses line‑number navigation failures for clickable file links, which is conceptually similar to the Markdown preview anchor problem, but it specifically addresses terminal links, not Markdown preview. Thus it’s relevant but not sufficient to fully ground an issue or improvement brief for the Markdown preview scenario.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses line-number links in the terminal, not in Markdown preview, so it does not directly support creating an issue for the described preview bug.'}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a crash during search in the markdown preview panel, which is unrelated to the issue of link anchors not navigating to the specified line number.'}
+
+🔎 Checking candidate #4
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a hover‑tooltip issue, not a link‑anchor navigation problem.'}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses accessibility help for markdown cells, which does not address link anchor navigation failures.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ The current collected data mainly concerns terminal file links that fail to parse line numbers, which is related but not identical to the reported issue with Markdown preview link anchors.  
+There is no direct evidence or example of the Markdown preview anchor bug in the supplied information.  
+To create an accurate issue brief, we need additional details specific to the Markdown preview context (e.g., example markdown, preview behavior, extensions affecting preview, etc.).
+
+**Decision:** search for more data.
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] Markdown preview link anchor fails to navigate to specified line number. [Symptoms] Clicking the link opens file at first line. [Environment] VS Code 1.112.0. [Possible Category] UI / Interaction. [Problem Type] Line anchor navigation issue.
+🌍 Searching for: [Problem] Markdown preview link anchor fails to navigate to specified line number. [Symptoms] Clicking the link opens file at first line. [Environment] VS Code 1.112.0. [Possible Category] UI / Interaction. [Problem Type] Line anchor navigation issue.
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The summary provides sufficient detail about the issue, environment, and root cause to create a structured VS Code issue brief.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Markdown preview link anchor fails to navigate to specified line number. [Symptoms] Clicking the link opens file at first line. [Environment] VS Code 1.112.0. [Possible Category] UI / Interaction. [Problem Type] Line anchor navigation issue.",
+  "collected": [
+    "[bug, verified, windows, terminal-links, insiders-released] Terminal file links do not recognize the line number\n\nHi, similar to this issue https://github.com/microsoft/vscode/issues/171880 but in my case the line numbers are within parenthesis and are not recognized.\n\n![MTL-BJ465](https://github.com/microsoft/vscode/assets/1246341/d811e5b9-92a1-4424-8441-ecc55776aa4f)\n\n**Current behavior:** The file is recognized and I can click on it to open it but will not consider the linenumber\n**Expected behavior:** When the file is opened after click, it takes me to the right line number\n\n<!-- ⚠️⚠️ Do Not Delete This! bug_report_template ⚠️⚠️ -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- 🕮 Read our guide about submitting issues: https://github.com/microsoft/vscode/wiki/Submitting-Bugs-and-Suggestions -->\n<!-- 🔎 Search existing issues to avoid creating duplicates. -->\n<!-- 🧪 Test using the latest Insiders build to see if your issue has already been fixed: https://code.visualstudio.com/insiders/ -->\n<!-- 💡 Instead of creating your report here, use 'Report Issue' from the 'Help' menu in VS Code to pre-fill useful information. -->\n<!-- 🔧 Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Yes\n\n<!-- 🪓 If you answered No above, use 'Help: Start Extension Bisect' from Command Palette to try to identify the cause. -->\n<!-- 📣 Issues caused by an extension need to be reported directly to the extension publisher. The 'Help > Report Issue' dialog can assist with this. -->\n- **VS Code Version: 1.82.2 <-- LATEST**\n- OS Version: Win 10\n\nSteps to Reproduce:\n\n1. Have a cpp file with some syntax error\n2. Compile that cpp file with FastBuild\n\nNote: reopening this issue https://github.com/microsoft/vscode/issues/192457 after updating to latest version and verifying the bug is still there."
+  ],
+  "decision": "The current collected data mainly concerns terminal file links that fail to parse line numbers, which is related but not identical to the reported issue with Markdown preview link anchors.  \nThere is no direct evidence or example of the Markdown preview anchor bug in the supplied information.  \nTo create an accurate issue brief, we need additional details specific to the Markdown preview context (e.g., example markdown, preview behavior, extensions affecting preview, etc.).\n\n**Decision:** search for more data.\n(Used online search summary)",
+  "bug_report": "{\"type\":\"bug\",\"title\":\"Markdown preview link anchors with #L<number> do not navigate to specified line\",\"problem_summary\":\"Clicking a Markdown preview link that includes a line number anchor (e.g., #L42) opens the target file at the first line instead of jumping to that line.\",\"evidence\":[\"Problem: Markdown preview link anchor fails to navigate to specified line number.\",\"Symptoms: Clicking the link opens file at first line.\",\"Environment: VS Code 1.112.0.\",\"Online findings: built‑in renderer does not interpret `#L<number>` syntax, strips trailing whitespace, and thus fails to resolve line anchors.\"],\"suggested_improvements\":[\"Add support in the Markdown preview renderer for parsing and following `#L<number>` anchors.\",\"Ensure that trailing whitespace does not interfere with link parsing by preserving or normalizing whitespace during render.\",\"Provide a diagnostic message or warning when an anchor cannot be resolved so users know why navigation failed.\"],\"possible_causes\":[\"Markdown preview renderer intentionally excludes line‑number anchors to maintain compatibility with CommonMark specifications.\",\"The renderer strips trailing whitespace, which can corrupt anchor URLs that rely on exact formatting.\",\"The implementation of link resolution in the preview only handles heading anchors (`#heading`) and not line anchors.\"],\"notes\":\"The issue appears to be a limitation of VS Code’s built‑in Markdown preview and not related to extensions or user configuration.\"}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #22/42 | ID: 304439 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a different Copilot issue (duplicate search results) and does not mention Unicode double‑encoding, so it is neither relevant nor sufficient for this problem.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a listener‑leak issue with large MCP output, not double‑encoding Unicode.'}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': 'The candidate snippet discusses duplicate grep_search results, not Unicode double‑encoding or mojibake issues.'}
+
+🔎 Checking candidate #4
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet mentions a Unicode escape error in JSON, which is related to Unicode handling issues, but it does not address double‑encoding or provide enough context or resolution steps to create a grounded issue or improvement brief.'}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses a broken #usages tool in Copilot Chat, not Unicode double‑encoding or mojibake issues.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ **search**
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] Copilot Chat tool infrastructure double-encodes Unicode strings, producing mojibake. [Symptoms] garbled Unicode in file edits and MCP tool calls, including invalid surrogates. [Environment] Windows, VS Code Insiders, unknown hardware. [Possible Category] Extensions. [Problem Type] Double-encoding of Unicode in tool parameters.
+🌍 Searching for: [Problem] Copilot Chat tool infrastructure double-encodes Unicode strings, producing mojibake. [Symptoms] garbled Unicode in file edits and MCP tool calls, including invalid surrogates. [Environment] Windows, VS Code Insiders, unknown hardware. [Possible Category] Extensions. [Problem Type] Double-encoding of Unicode in tool parameters.
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The summary contains all key details needed to craft a structured VS Code issue brief.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Copilot Chat tool infrastructure double-encodes Unicode strings, producing mojibake. [Symptoms] garbled Unicode in file edits and MCP tool calls, including invalid surrogates. [Environment] Windows, VS Code Insiders, unknown hardware. [Possible Category] Extensions. [Problem Type] Double-encoding of Unicode in tool parameters.",
+  "collected": [
+    "[bug, verified, chat] Bad unicode escape in Copilot API response\n\nBad Unicode escape in JSON at position 3 (line 1 column 4)\n\n<img width=\"558\" height=\"272\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/5b84738a-b5f8-4702-b26c-04b7ac2be88a\" />\n\n]Bad Unicode escape in JSON at position 3 (line 1 column 4)\n$onExtensionRuntimeError @ workbench.desktop.main.js:sourcemap:984\nworkbench.desktop.main.js:sourcemap:984 SyntaxError: Bad Unicode escape in JSON at position 3 (line 1 column 4)\n at JSON.parse (<anonymous>)\n at nfn (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:263:759)\n at Rfe (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:262:95881)\n at dAi (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:263:181)\n at Rfe (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:262:95881)\n at uAi (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:263:1528)\n at Rfe (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:262:95881)\n at UY (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:262:95455)\n at gAi (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:1754:20076)\n at US.applyDeltaToProgress (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:1754:17946)\n at /Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:1754:19354\n at /Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:1754:18750\n at Array.forEach (<anonymous>)\n at US.checkForKeyWords (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:1754:18738)\n at US.applyDelta (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:1754:19289)\n at US.doProcessResponse (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:1754:17166)\n at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n at async Object.processResponse (/Users/pierceboggan/.vscode-insiders/extensions/github.copilot-chat-0.38.2026022303/dist/extension.js:1764:6725)\n$onExtensionRuntimeError @ workbench.desktop.main.js:sourcemap:984\nworkbench.desktop.main.js:sourcemap:414 ERR An unknown e\n\n[apierror.md](https://github.com/user-attachments/files/25503734/apierror.md)"
+  ],
+  "decision": "**search**\n(Used online search summary)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Copilot Chat double-encodes Unicode, causing mojibake\",\n  \"problem_summary\": \"When using the Copilot Chat extension in VS Code, Unicode text is encoded twice before being sent to the MCP server or passed to other tools, resulting in garbled characters, invalid surrogate pairs, and corrupted edits.\",\n  \"evidence\": [\n    \"garbled Unicode appears in file edits performed via Copilot Chat\",\n    \"MCP tool calls (e.g., Playwright MCP) receive corrupted string payloads\",\n    \"invalid surrogate pairs reported in logs\"\n  ],\n  \"suggested_improvements\": [\n    \"Implement a single, consistent UTF‑8 encoding step when serialising parameters to the MCP server.\",\n    \"Add runtime checks to detect double-encoding and log a warning before sending data.\",\n    \"Ensure the extension host and external servers agree on the expected encoding format (e.g., raw UTF‑8 bytes vs. JSON‑escaped strings).\",\n    \"Update the Copilot Chat extension to strip existing encoding flags before re-encoding.\",\n    \"Include unit tests that exercise a variety of Unicode characters, including surrogate pairs and line terminators.\"\n  ],\n  \"possible_causes\": [\n    \"Mismatch between VS Code’s extension host and the MCP server’s expected encoding.\",\n    \"Extension logic re-encodes a string that is already UTF‑8 encoded.\",\n    \"Misuse of JSON string escaping leading to double encoding.\",\n    \"Server incorrectly assumes incoming data is already encoded.\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #23/42 | ID: 304390 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet discusses missing change lists in Copilot CLI, which relates to change reporting, but it does not cover the specific state mismatch after reverting modifications described by the user.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a Copilot Chat/Jupyter‑notebook bug, not a CLI change‑reporting issue, so it isn’t directly useful for the user’s problem.'}
+
+🔎 Checking candidate #3
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet describes a Copilot CLI change‑display issue, which is similar to the reported state mismatch, but it does not cover reverting modifications or the migration prompt specifics needed to create a full issue brief.'}
+
+🔎 Checking candidate #4
+{'relevant': True, 'sufficient': True, 'reason': "The snippet directly describes the same '+0 -0' change reporting issue in Copilot, matching the user’s problem."}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Copilot CLI incorrectly reports changes after reverting modifications; [Symptoms] Migration prompt shows +0 -0; [Environment] Unknown; [Possible Category] Extensions; [Problem Type] State Mismatch",
+  "collected": [
+    "[bug, verified, copilot-cli-agent] When delegating to Copilot CLI I cannot see the list of modified files\n\n* Open VS Code repo (any git repo) in VS code\n* Make some changes to some files\n* Open `Local` Chat and send a prompt `what is 1+2`\n* Wait for response\n* Now for the same chat, select `Copilot CLI`\n* Send a prompt `what is 2+5`\n* You shoudl see the following UI, here you can now see what files have changed\nPreviously we'd display this message but you could not see the changed files, hence there was no context\n\n<img width=\"960\" height=\"266\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/627bd697-38aa-4372-8ee2-ae510bb7d512\" />",
+    "[bug, verified, copilot-cli-agent] Changes not displayed in Copilot CLI when model auto commits\n\nI recall seeing around 2 sessions where the model auto committed changes even though I didn't ask for this.\nThe changes were not committed by VS Code either.\n\nAs a result of this, I didn't see any of the changes show up after the turn ended.\nUnable to find the sessions, will try to replicate and share logs if i run into this again"
+  ],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Copilot Agent lists changes as +0 -0 after reverting modifications\",\n  \"problem_summary\": \"The Copilot Agent reports files as changed in the migration prompt, but the diff shows +0 -0, indicating a state mismatch after reverting changes or when the change is bound per prompt instead of per chat.\",\n  \"evidence\": [\n    \"Copilot Agent generates files or makes changes that are listed as \\\"Changed\\\" with +0 -0 in the migration prompt.\",\n    \"Issue occurs when the change is bound as per prompt, not per chat.\",\n    \"Extension version 0.33.3, VS Code 1.106.3.\"\n  ],\n  \"suggested_improvements\": [\n    \"Recalculate diff counts accurately when file changes are reverted or bound to prompts.\",\n    \"Add a check to refresh the change state after a revert operation.\",\n    \"Implement unit tests for diff calculation and state persistence.\",\n    \"Log internal state transitions for debugging similar issues.\"\n  ],\n  \"possible_causes\": [\n    \"Bug in the diff calculation logic that fails to detect reverted changes.\",\n    \"Stale cached state for file changes after a revert.\",\n    \"Incorrect handling of change binding context (prompt vs chat).\"\n  ],\n  \"notes\": \"This issue is confirmed and reported by the extension author; it may require a patch in the next release.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #24/42 | ID: 304336 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'Matches the user’s issue exactly, providing the same bug scenario, steps, and description.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Stop and send command does not interrupt a running chat request and queues the new message instead of sending it, [Symptoms] Unexpected queuing behavior, [Environment] VS Code chat interface, [Possible Category] UI / Interaction, [Problem Type] Command failure.",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"\\\"Stop and send\\\" does not interrupt a running chat request in VS Code chat\",\n  \"problem_summary\": \"When a long chat request is running, selecting the \\\"Stop and send\\\" command queues the new prompt instead of stopping the current request and processing the new one immediately.\",\n  \"evidence\": [\n    \"Description of steps: start a long request, while it is still running enter a new prompt and select \\\"stop and send\\\".\",\n    \"Result: the new message is added to the queue rather than being sent immediately.\",\n    \"Screenshot reference: https://github.com/user-attachments/assets/ee920e10-60f3-48a2-9a9c-cfd7ca7ec83d\"\n  ],\n  \"suggested_improvements\": [\n    \"Modify the command handler so that \\\"Stop and send\\\" cancels any active request before enqueuing the new prompt.\",\n    \"Add a brief delay or confirmation step to ensure the stop action is processed before the new message is queued.\",\n    \"Update the UI to visibly indicate when a request is being stopped and a new request is being queued.\",\n    \"Implement unit tests for the stop-and-send behavior to catch regressions.\"\n  ],\n  \"possible_causes\": [\n    \"The command may be incorrectly queued due to race condition between stop signal and queue processing.\",\n    \"The internal queue logic might not check for an active request before adding a new one.\",\n    \"Event handling for the stop button could be triggering after the new prompt is queued.\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #25/42 | ID: 304291 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': False, 'reason': 'Shows sandbox behavior with no output, useful for diagnosis but lacks a concrete fix or improvement suggestion.'}
+
+🔎 Checking candidate #2
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet discusses sandbox failures in a remote WSL environment, which aligns with the reported sandbox command execution issue. However, it lacks details on ping failures, LLM roundtrip, or retry logic needed for a complete grounded brief.'}
+
+🔎 Checking candidate #3
+{'relevant': True, 'sufficient': False, 'reason': "The snippet points to a sandbox‑specific bug that could cause command failures, but it doesn't provide enough detail (e.g., exact ping command, logs, retry behavior) to fully ground an issue or improvement brief."}
+
+🔎 Checking candidate #4
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet directly describes a sandbox failure with gh push and the agent’s lack of retry logic, providing steps and logs that match the user’s problem, making it both relevant and sufficient for drafting a grounded issue or improvement brief.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem]: Sandbox command execution fails; [Symptoms]: ping fails, triggers LLM roundtrip, re-exec outside sandbox; [Environment]: VS Code sandbox; [Possible Category]: Debugging; [Problem Type]: Retry logic",
+  "collected": [
+    "[bug, verified, insiders-released, agent-sandbox] Commands with no output show the sandbox command instead of \"no output\"\n\nFrom selfhosting\n\n```\nid : toolu_vrtx_01SmbDxnFitV89zMD41KnmWF__vscode-1773925473989\ntool : run_in_terminal\nargs : {\n \"command\": \"cd /Users/alex/src/vscode3 && git diff 0e5d5949d13f..2c357a926df6 -- 'src/vs/workbench/contrib/chat/common/promptSyntax/service/promptsServiceImpl.ts' | grep -A3 -B3 'getInstructionFiles\\\\|getHooks\\\\|getCustomAgents'\",\n \"explanation\": \"Check if getHooks, getInstructionFiles, or getCustomAgents were changed.\",\n \"goal\": \"Check other methods on Enter path\",\n \"isBackground\": false,\n \"timeout\": 10000\n}\n```\n\n```\nCommand failed while running in sandboxed mode. If the command failed due to sandboxing:\n- If it would be reasonable to extend the sandbox rules, work with the user to update allowWrite for file system access problems in chat.tools.terminal.sandbox.macFileSystem, or to add required domains to chat.tools.terminal.sandbox.network.allowedDomains.\n- You can also rerun requestUnsandboxedExecution=true and prompt the user to bypass the sandbox.\n\nHere is the output of the command:\n\n[ alex@Alexandrus-MacBook-Pro:/Users/alex/src/vscode3 (main) ] $ ELECTRON_RUN_AS\n_NODE=1 PATH=\"$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Res\nources/app/node_modules/@vscode/ripgrep/bin\" TMPDIR=\"/var/folders/bb/_8jjjyy971x\n2frm3nr3g7m4r0000gn/T\" \"/Applications/Visual Studio Code - Insiders.app/Contents\n/MacOS/Code - Insiders\" \"/Applications/Visual Studio Code - Insiders.app/Content\ns/Resources/app/node_modules/@anthropic-ai/sandbox-runtime/dist/cli.js\" --settin\ngs \"/var/folders/bb/_8jjjyy971x2frm3nr3g7m4r0000gn/T/vscode-sandbox-settings-e1d\n97eb5-4307-4695-b42c-097b7a01e45f.json\" -c ' git diff 0e5d5949d13f..2c357a926df6\n -- '\\''src/vs/workbench/contrib/chat/common/promptSyntax/service/promptsService\nImpl.ts'\\'' | grep -A3 -B3 '\\''getInstructionFiles\\|getHooks\\|getCustomAgents'\\'\n''\n \n\nCommand exited with code 1\n```",
+    "[bug, verified, insiders-released, agent-sandbox] Sandbox doesn't work at all in remote WSL\n\nTesting #290620\n\nYou're referencing the Windows binary on the Linux side:\n\n<img width=\"654\" height=\"219\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/9b27e64d-6f31-4bb4-b2e9-ef9959b55d23\" />\n\n<img width=\"1592\" height=\"205\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/0fc372ce-c9f2-418d-a19b-d349a3408abf\" />",
+    "[bug, verified, insiders-released, agent-sandbox] `cd CWD && ` doesn't get stripped when sandboxing is enabled\n\n* Try `` can you pls run `cd /Users/alex/src/vscode3 && ls -lh` ``\n* when sandboxing is off this gets transformed to `ls -lh`:\n\n<img width=\"454\" height=\"160\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/abd4fbdc-a5be-4d00-88b5-dd0cc8dfe85e\" />\n\n* this doesn't work when sandboxing is on:\n\n<img width=\"466\" height=\"165\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/2ff793b2-cd98-4cb7-80cd-7317513832ff\" />\n\ncc @roblourens"
+  ],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Agent fails to offer external execution for git push in VS Code sandbox\",\n  \"problem_summary\": \"When running git push via the VS Code Agent inside a sandboxed environment, the agent attempts the operation inside the sandbox, logs a failure, and opens a browser login prompt instead of offering to run the command outside the sandbox.\",\n  \"evidence\": [\n    \"Agent attempts push inside sandbox and opens integrated browser for GitHub login.\",\n    \"Logs show failure of git push command.\",\n    \"User reports no prompt to run the command outside the sandbox.\"\n  ],\n  \"suggested_improvements\": [\n    \"Add sandbox detection before executing git operations.\",\n    \"If a command fails due to sandbox limitations, automatically prompt the user to retry outside the sandbox.\",\n    \"Prevent the agent from attempting network operations that are blocked in the sandbox.\",\n    \"Provide clearer error messages indicating why the operation failed.\"\n  ],\n  \"possible_causes\": [\n    \"Sandbox environment lacks network access or Git credentials.\",\n    \"Agent's sandbox detection logic is incomplete or incorrectly flags the environment.\",\n    \"Hardcoded behavior to always run git push inside the sandbox.\",\n    \"Missing fallback mechanism for sandboxed command failures.\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #26/42 | ID: 304274 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet describes a title‑bar visibility bug that matches the missing title bar problem reported by the user.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Claude agent panel lacks title bar until reopened, breaking navigation. [Symptoms] No title bar visible on first open. [Environment] VS Code Insiders 1.113.0 on macOS 13.3 (Darwin arm64 25.3.0) with Apple M4 Pro. [Possible Category] UI / Interaction. [Problem Type] Missing UI element (title bar).",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\"type\":\"bug\",\"title\":\"Claude agent panel missing title bar on first open\",\"problem_summary\":\"When the Claude agent panel is opened for the first time, its title bar is not rendered, preventing navigation until the panel is closed and reopened.\",\"evidence\":[\"First open of the panel shows no title bar in VS Code Insiders 1.113.0 on macOS 13.3 (Apple M4 Pro).\",\"Reopening the panel restores the title bar.\",\"Issue appears even with all extensions disabled.\",\"Similar native title bar visibility bug reported since 1.101 indicates a broader UI rendering issue.\"],\"suggested_improvements\":[\"Add an explicit initialization step for the panel’s title bar in the opening logic.\",\"Verify the panel’s DOM is fully mounted before applying the title bar styling.\",\"Implement a fallback rendering of the title bar when the initial render is delayed or fails.\",\"Add diagnostics to log missing title bar events to aid future debugging.\"],\"possible_causes\":[\"Timing issue in panel lifecycle where title bar component mounts after the panel container is displayed.\",\"CSS or style conflicts preventing the title bar from being visible on first render.\",\"Bug in the panel view provider that conditionally hides the title bar based on state that isn't set until after first paint.\",\"Interaction with native title bar settings causing a rendering race condition.\"],\"notes\":\"This issue breaks usability for users navigating the Claude agent. Ensuring the title bar is present from the first render will improve navigation and consistency with other panels.\"}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #27/42 | ID: 304229 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes an icon‑update issue in the Explorer, not a button click problem, and it provides no guidance for fixing a non‑responsive button.'}
+
+🔎 Checking candidate #2
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet describes a similar unresponsive button bug with detailed context and environment, providing useful information for crafting a grounded issue or improvement brief.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Language models configure button unresponsive, [Symptoms] does nothing when clicked, [Environment] Unknown OS, VS Code version unknown, [Possible Category] UI / Interaction, [Problem Type] Configure button unresponsive",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "```json\n{\n  \"type\": \"bug\",\n  \"title\": \"Select Language button on new file is unresponsive\",\n  \"problem_summary\": \"When creating a new file, the ‘Select a language’ button does nothing on click. No language picker appears, no diagnostics, and no feedback to the user.\",\n  \"evidence\": [\n    \"VS Code version 1.91.0 (2024-07-01)\",\n    \"OS: Windows 10 x64 22621\",\n    \"Button click results in no UI response or error\",\n    \"No logs indicating a language selection event\",\n    \"Extensions list shows many language-related extensions active (Python, C++, CMake, Pylance, etc.)\"\n  ],\n  \"suggested_improvements\": [\n    \"Add a default fallback action when the button is clicked, such as opening the language selector or displaying an error message.\",\n    \"Ensure the button is enabled by verifying that the editor has an associated language configuration before rendering the UI.\",\n    \"Add telemetry to capture button click events and any underlying errors to aid debugging.\",\n    \"Provide a clear user feedback path (e.g., toast notification) if language detection fails or no language servers are available.\"\n  ],\n  \"possible_causes\": [\n    \"UI rendering issue caused by a conflict with an installed extension or a theme.\",\n    \"Missing or corrupted language server configuration files preventing the language picker from loading.\",\n    \"Race condition between editor initialization and button activation, leading to a disabled state.\",\n    \"Bug in the internal language picker component that is triggered only in the specific VS Code build (ea1445cc7).\"\n  ],\n  \"notes\": \"The issue appears reproducible on the latest 1.91.0 release for Windows 10. A temporary workaround is to manually set the language via the status bar or `Ctrl+K M` command. Further investigation should focus on telemetry logs and extension interactions.\"\n}\n```",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #28/42 | ID: 304219 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet directly addresses keyboard interaction failures in the model picker, aligns with the reported key‑press issue, and offers concrete code references and a clear fix approach.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Right arrow key press initially ignored after opening model picker UI, [Symptoms] no effect on first press, [Environment] unknown, [Possible Category] UI / Interaction, [Problem Type] Key press ignored",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Model picker keyboard interaction fails – right arrow ignored & cannot open via enter/space\",\n  \"problem_summary\": \"When the model picker UI is focused, the first right‑arrow key press is ignored and pressing enter or space does not open the dropdown, breaking keyboard navigation and accessibility.\",\n  \"evidence\": [\n    \"Right arrow key press initially ignored after opening model picker UI\",\n    \"Tab to model picker → press enter or space → nothing happens\",\n    \"Suggested patch: extend BaseDropdown with logic from dropdown.ts (lines 78‑89)\"\n  ],\n  \"suggested_improvements\": [\n    \"Extend BaseDropdown to include the missing keyboard handling logic from the referenced lines in dropdown.ts.\",\n    \"Ensure the dropdown element receives focus and the keydown events are correctly processed.\",\n    \"Add unit tests to cover enter, space, and arrow key navigation for the model picker.\",\n    \"Validate that the dropdown can be opened and navigated solely via keyboard in all supported platforms.\"\n  ],\n  \"possible_causes\": [\n    \"Missing or incorrect event listeners for keydown on the dropdown component.\",\n    \"Focus not being set on the dropdown input when the UI opens, causing the first arrow key to be ignored.\",\n    \"Override of the default BaseDropdown behavior that unintentionally disables enter/space opening logic.\"\n  ],\n  \"notes\": \"This appears to be a regression affecting keyboard interaction; confirming the issue in both insiders and stable builds will help prioritize the fix.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #29/42 | ID: 304218 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet explicitly describes the same bug—changing the reasoning effort dismisses the model picker—and includes user comments and an image, providing enough context for a grounded issue or improvement brief.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] The main model picker UI is dismissed when the mouse moves over the expanded thinking effort UI. [Symptoms] UI disappears. [Environment] Unknown. [Possible Category] UI / Interaction. [Problem Type] Interaction bug.",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Model picker UI dismissed when changing reasoning effort\",\n  \"problem_summary\": \"When the user expands the thinking effort (reasoning level) UI, the main model picker UI is automatically dismissed, forcing the user to reopen it before selecting a model.\",\n  \"evidence\": [\n    \"Bug description indicates UI disappears upon mouse movement over the expanded thinking effort UI.\",\n    \"Screenshot linked in the issue demonstrates the picker vanishing when the user interacts with the reasoning level controls.\"\n  ],\n  \"suggested_improvements\": [\n    \"Modify the event handling so that expanding the reasoning level does not trigger a picker dismissal.\",\n    \"Keep the model picker open while the reasoning level controls are interacted with, possibly by using a separate container or disabling the dismissal logic during the interaction.\",\n    \"Add a visual cue (e.g., a tooltip or temporary lock) indicating that the picker will remain visible while adjusting reasoning effort.\",\n    \"Re‑evaluate focus/blur logic to ensure the picker only closes when the user explicitly dismisses it.\"\n  ],\n  \"possible_causes\": [\n    \"A mouseover or focus event on the reasoning level UI is firing a close event for the picker.\",\n    \"The picker may be tied to a global blur listener that interprets the mouse move as focus loss.\",\n    \"Z‑index or click‑through layering causing the picker to be covered or hidden when the expanded UI appears.\"\n  ],\n  \"notes\": \"This is a UI/interaction bug that impacts workflow efficiency. Addressing it will improve usability for users who frequently adjust reasoning effort before selecting a model.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #30/42 | ID: 304214 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': False, 'reason': 'It describes the same missing context‑menu problem, but references Windows\u202f11 and an older VS\u202fCode version, so it only partially supports the issue.'}
+
+🔎 Checking candidate #2
+{'relevant': True, 'sufficient': True, 'reason': 'matches the user’s OS, VS Code version, and missing context menu symptoms; includes reproduction steps and troubleshooting notes useful for an issue brief.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Open with Code missing from Explorer context menu; [Symptoms] Right-click and shift+right-click on folders show no option; [Environment] Windows 10 10.0.26100 with VS Code 1.112.0; [Possible Category] UI / Interaction; [Problem Type] context menu missing",
+  "collected": [
+    "[bug, verified, windows, confirmed, insiders-released, system-context-menu] \"Open with Code\" missing from context menu in latest version\n\nSimilar to #260419 the latest VS Code Version 1.110.1 is no longer displaying the\" Open with Code\" context menu entry on folders on Windows 11. It's only displayed on files.\n\nSteps to Reproduce:\n\n1. Right click in a folder\n2. \"Open with Code\" context menu entry is missing"
+  ],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Open with VS Code missing from Explorer context menu after update\",\n  \"problem_summary\": \"After updating to VS Code Insiders 1.109.0 (system installation) on Windows 10/11, the 'Open with VS Code' option no longer appears in the Explorer context menu for folders or files, preventing users from launching VS Code from the file explorer.\",\n  \"evidence\": [\n    \"Right-click and shift+right-click on folders show no option.\",\n    \"Issue reproduces on Windows 10 10.0.26100 with VS Code 1.112.0 and 1.109.0-insider.\",\n    \"Reinstalling VS Code Insiders with context menu options enabled still leaves the entry missing.\",\n    \"The issue is reported in multiple GitHub issues (e.g., #260389, #287832) and persists after disabling extensions.\"\n  ],\n  \"suggested_improvements\": [\n    \"Verify that the system installer is correctly adding the registry keys for Explorer integration.\",\n    \"Reinstall VS Code using the latest system installer and ensure the 'Add to context menu' option is selected.\",\n    \"Run VS Code with the `--disable-extensions` flag to confirm extensions are not interfering.\",\n    \"Check Windows Explorer settings for disabled context menu entries (e.g., via the Registry Editor under `HKEY_CLASSES_ROOT\\Directory\\shell` and `HKEY_CLASSES_ROOT\\*\\shell`).\",\n    \"Provide a user‑friendly reinstall or repair option that automatically re‑creates missing context menu entries.\",\n    \"Add diagnostic telemetry that logs the presence or absence of the context menu entry on launch.\"\n  ],\n  \"possible_causes\": [\n    \"The installer failed to write the required registry keys for the context menu.\",\n    \"A recent update introduced a regression that removes or corrupts the Explorer integration entries.\",\n    \"System policies or third‑party security software might be stripping context menu entries.\",\n    \"File system permissions or registry permissions prevent creation of the necessary keys.\"\n  ],\n  \"notes\": \"A temporary workaround involves applying a fix from a related GitHub issue (e.g., installing the workaround script referenced in #204696). This restores the menu entry but does not address the root cause in the installer.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #31/42 | ID: 304202 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet describes a similar image carousel bug in the same VS Code version and OS, providing a matching issue context and detailed environment info that can be used to draft a grounded issue brief.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Image Carousel shows only the first attached image, [Symptoms] only the first screenshot is displayed in the carousel, [Environment] VS Code 1.113.0-insider on macOS (Darwin arm64 25.3.0), [Possible Category] UI / Interaction, [Problem Type] Feature/Behavior",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Image carousel shows only the first screenshot or displays input elements incorrectly\",\n  \"problem_summary\": \"In the integrated browser chat, the image carousel displays only the first attached image. When elements are added to chat, they appear in the carousel but are rendered as broken input elements rather than images, causing missing or malformed screenshots.\",\n  \"evidence\": [\n    \"VS Code version 1.113.0-insider on macOS (Darwin arm64 25.3.0)\",\n    \"Screenshot URLs: https://cleanshot.com/share/4Tk0ynGs\",\n    \"Reported symptom: only first screenshot displayed, subsequent images omitted or shown as broken inputs\"\n  ],\n  \"suggested_improvements\": [\n    \"Update carousel rendering logic to iterate over all image nodes and render each snapshot correctly.\",\n    \"Add a filter to exclude non‑image elements (e.g., input nodes) from the carousel display.\",\n    \"Implement a graceful fallback or placeholder when an image fails to load.\",\n    \"Add unit and integration tests for carousel rendering with multiple images.\",\n    \"Investigate and resolve any CSS/DOM overflow or index handling bugs that limit the carousel to a single image.\"\n  ],\n  \"possible_causes\": [\n    \"Bug in the carousel component that stops after rendering the first image node.\",\n    \"Incorrect filtering of child nodes, causing input elements to be misinterpreted as images.\",\n    \"CSS overflow or layout constraint that hides additional images.\",\n    \"State initialization that only keeps the first image in the image list.\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #32/42 | ID: 304181 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses missing GLIBC dependencies for dev containers, not bubblewrap or socat needed for the extension.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'Topic mismatch – the snippet discusses an ExtensionEditor display bug, not missing dependencies like bubblewrap/socat.'}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses generic packaging rollout support for Linux (apt, deb, snap) and does not address the specific issue of missing bubblewrap/socat binaries required by an extension on Ubuntu arm64.'}
+
+🔎 Checking candidate #4
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a generic issue about extensions stuck installing and provides a template, which does not address the specific dependency (bubblewrap/socat) problem on Ubuntu arm64.'}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a UI icon issue in the extension preview, not a dependency bundling error for missing binaries on Ubuntu arm64.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ **Analysis**
+
+The only data provided is the user’s own description of the issue:
+
+- **Problem**: Extension fails to load because `bubblewrap` and `socat` are missing.
+- **Symptoms**: Error messages indicating missing binaries.
+- **Environment**: Ubuntu 22.04 LTS arm64, VS Code 1.113.0‑insider.
+- **Category**: Extensions.
+- **Problem Type**: Dependency bundling issue.
+
+There is no additional collected information such as:
+
+- The name or publisher of the failing extension.
+- Exact error log snippets or stack traces.
+- Steps to reproduce or any configuration files.
+- Whether the user has attempted to install the missing dependencies manually.
+- Current system path or package manager status.
+
+Because the brief needs detailed context (extension identity, specific error messages, troubleshooting steps already attempted, etc.) to provide actionable recommendations or a concise report, the available information is **insufficient**.
+
+**Decision**
+
+search
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] Extension fails to load due to missing bubblewrap and socat dependencies, [Symptoms] error messages indicating missing binaries, [Environment] Ubuntu 22.04 LTS arm64 with VS Code 1.113.0-insider, [Possible Category] Extensions, [Problem Type] Dependency bundling issue
+🌍 Searching for: [Problem] Extension fails to load due to missing bubblewrap and socat dependencies, [Symptoms] error messages indicating missing binaries, [Environment] Ubuntu 22.04 LTS arm64 with VS Code 1.113.0-insider, [Possible Category] Extensions, [Problem Type] Dependency bundling issue
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The summary accurately captures the root cause (missing bubblewrap and socat binaries) and offers concrete remediation steps that match the user’s environment and issue type.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Extension fails to load due to missing bubblewrap and socat dependencies, [Symptoms] error messages indicating missing binaries, [Environment] Ubuntu 22.04 LTS arm64 with VS Code 1.113.0-insider, [Possible Category] Extensions, [Problem Type] Dependency bundling issue",
+  "collected": [],
+  "decision": "**Analysis**\n\nThe only data provided is the user’s own description of the issue:\n\n- **Problem**: Extension fails to load because `bubblewrap` and `socat` are missing.\n- **Symptoms**: Error messages indicating missing binaries.\n- **Environment**: Ubuntu 22.04 LTS arm64, VS Code 1.113.0‑insider.\n- **Category**: Extensions.\n- **Problem Type**: Dependency bundling issue.\n\nThere is no additional collected information such as:\n\n- The name or publisher of the failing extension.\n- Exact error log snippets or stack traces.\n- Steps to reproduce or any configuration files.\n- Whether the user has attempted to install the missing dependencies manually.\n- Current system path or package manager status.\n\nBecause the brief needs detailed context (extension identity, specific error messages, troubleshooting steps already attempted, etc.) to provide actionable recommendations or a concise report, the available information is **insufficient**.\n\n**Decision**\n\nsearch\n(Used online search summary)",
+  "bug_report": "{\"type\":\"bug\",\"title\":\"Extension fails to load due to missing bubblewrap and socat dependencies\",\"problem_summary\":\"VS Code extensions cannot start on Ubuntu 22.04 arm64 because required binaries (bubblewrap, socat) are absent from the host $PATH, causing error messages during extension load.\",\"evidence\":[\"Error messages indicating missing binaries such as \\\"bubblewrap not found\\\" or \\\"socat not found\\\"\"],\"suggested_improvements\":[\"Add a runtime check that verifies required executables exist and provide clear instructions to install them (e.g., `apt install bubblewrap socat`).\\nInclude the user’s local bin directory in the extension’s PATH automatically when launching extensions.\\nBundle these dependencies with the extension or provide a small installer script that checks and installs missing components.\"]}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #33/42 | ID: 304158 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet addresses a zoom‑level issue in lightweight windows (title bar), but the user reports a misaligned screenshot rectangle in a chat element on macOS, so the knowledge is neither directly relevant nor sufficient.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes broken images in the carousel, not a misaligned screenshot rectangle caused by zoom level mismatches.'}
+
+🔎 Checking candidate #3
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet describes a screenshot mis‑rendering bug in the chat carousel for the same VS Code version and OS, matching the user’s misalignment issue due to zoom level, providing enough context to craft an issue or improvement brief.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "Add Element to Chat screenshot rectangle misalignment due to incorrect zoom level usage [Problem] [Symptoms] Misaligned rectangle [Environment] VS Code 1.113.0-insider on Darwin arm64 [Possible Category] UI / Interaction [Problem Type] Zoom level mismatch",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\"type\":\"bug\",\"title\":\"Image carousel displays broken input elements when adding chat elements\",\"problem_summary\":\"When adding elements to chat via the integrated browser, the carousel shows input elements that are not properly rendered, causing layout issues and broken images.\",\"evidence\":[\"Screenshot link: https://cleanshot.com/share/4Tk0ynGs\",\"VS Code version: 1.113.0-insider (2026-03-19)\",\"OS: Darwin arm64 25.3.0\",\"Extensions list includes many UI and preview extensions (e.g., markdown-preview, vscode-xml, chatgpt)\"],\"suggested_improvements\":[\"Filter input elements from the carousel rendering pipeline\",\"Validate element type before adding to carousel\",\"Add fallback rendering for unsupported element types\",\"Adjust zoom level handling to ensure consistent scaling\"],\"possible_causes\":[\"Incorrect type detection logic in carousel component\",\"Extension conflict causing multiple renderers to register for the same element type\",\"Zoom level mismatch leading to miscalculated dimensions for input elements\"],\"notes\":\"\"}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #34/42 | ID: 304137 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'Directly describes the same issue of indistinguishable selection highlighting in notebooks, matching the user’s symptoms.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Active selection color not displayed; [Symptoms] active selection appears the same as inactive; [Environment] OS unknown; [Possible Category] UI / Interaction; [Problem Type] UI bug",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Notebook cell editor cannot distinguish active selection from multi‑cursor highlights\",\n  \"problem_summary\": \"In VS Code notebooks, the active selection highlight is rendered with the same color as inactive or multi‑cursor highlights, making it impossible for users to track which portion of the selection is currently active.\",\n  \"evidence\": [\n    \"Screenshot of notebook cell showing identical colors for active and inactive selections (github asset link).\",\n    \"Comparison with regular editor where active selection is a faded-out color.\"\n  ],\n  \"suggested_improvements\": [\n    \"Implement a distinct visual style for active selections in notebook cells (e.g., lighter/ brighter shade or additional border).\",\n    \"Expose a theme setting or user configuration to customize active selection color specifically for notebooks.\",\n    \"Add a warning or tooltip in the release notes highlighting the current limitation.\"\n  ],\n  \"possible_causes\": [\n    \"Notebook cell rendering uses the same CSS class for all selection highlights, lacking a separate class for active selections.\",\n    \"Theme color mapping does not differentiate between active and inactive selection colors for notebooks.\",\n    \"Recent refactor of the notebook editor’s highlighting logic accidentally removed the active selection styling.\"\n  ],\n  \"notes\": \"Ensuring backward compatibility with existing themes is essential; consider adding a migration guide if a new configuration option is introduced.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #35/42 | ID: 304132 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet addresses a missing Windows Explorer context menu for VS\xa0Code, not the Quick Agent Input context menu issue described by the user.'}
+
+🔎 Checking candidate #2
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet contains a generic bug‑report template and tags (bug, windows, system-context-menu) that match the issue, but it lacks the filled‑in details required for a complete, grounded issue or improvement brief.'}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses a scrollbar issue in the editor’s custom context menu, not the Quick Agent Input context menu missing on Windows.'}
+
+🔎 Checking candidate #4
+{'relevant': True, 'sufficient': False, 'reason': 'Matches missing context menu on Windows, but lacks details specific to Quick Agent Input.'}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes keyboard navigation bugs in the add‑context quick pick, not the missing Quick Agent Input context menu on Windows.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ search
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] Quick Agent Input context menu not enabled; [Symptoms] only Windows context menu shown; [Environment] Windows; [Possible Category] UI / Interaction; [Problem Type] Agent Quick Input context menu missing
+🌍 Searching for: [Problem] Quick Agent Input context menu not enabled; [Symptoms] only Windows context menu shown; [Environment] Windows; [Possible Category] UI / Interaction; [Problem Type] Agent Quick Input context menu missing
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The online findings provide sufficient context and actionable details to create a structured issue brief.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Quick Agent Input context menu not enabled; [Symptoms] only Windows context menu shown; [Environment] Windows; [Possible Category] UI / Interaction; [Problem Type] Agent Quick Input context menu missing",
+  "collected": [
+    "[bug, verified, windows, insiders-released, system-context-menu] Missing context menu on windows\n\n<!-- ⚠️⚠️ Do Not Delete This! bug_report_template ⚠️⚠️ -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- 🕮 Read our guide about submitting issues: https://github.com/microsoft/vscode/wiki/Submitting-Bugs-and-Suggestions -->\n<!-- 🔎 Search existing issues to avoid creating duplicates. -->\n<!-- 🧪 Test using the latest Insiders build to see if your issue has already been fixed: https://code.visualstudio.com/insiders/ -->\n<!-- 💡 Instead of creating your report here, use 'Report Issue' from the 'Help' menu in VS Code to pre-fill useful information. -->\n<!-- 🔧 Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Yes/No\n\n<!-- 🪓 If you answered No above, use 'Help: Start Extension Bisect' from Command Palette to try to identify the cause. -->\n<!-- 📣 Issues caused by an extension need to be reported directly to the extension publisher. The 'Help > Report Issue' dialog can assist with this. -->\n- VS Code Version: \n- 1.109.1\n- OS Version: \nW11\n\nSteps to Reproduce:\n\n1. Install or upgrade to 1.109.x\n2. Look at right click menu",
+    "[bug, important, verified, insiders-released] Custom context menus don't appear\n\nNot sure why this doesn't happen on Insiders for me. Context menus don't appear on Windows where native context menus aren't used.\n\nBut the call stack I see is:\n\n1. Showing a context menu fires an event https://github.com/microsoft/vscode/blob/5eb1fa759598db6c69f39331506e7222aecf59e5/src/vs/platform/contextview/browser/contextMenuService.ts#L69\n1. This is listened to by the hover service https://github.com/microsoft/vscode/blob/5eb1fa759598db6c69f39331506e7222aecf59e5/src/vs/workbench/services/hover/browser/hoverService.ts#L40 and calls doHideHover\n1. doHideHover calls `_contextViewService.hideContextView()`\n1. This disposable gets called which immediately closes the context menu https://github.com/microsoft/vscode/blob/5eb1fa759598db6c69f39331506e7222aecf59e5/src/vs/base/browser/ui/contextview/contextview.ts#L364\n\nProbably related to https://github.com/microsoft/vscode/commit/32f0bc498bb20a6e3a09a979a6e055af0b55b684"
+  ],
+  "decision": "search\n(Used online search summary)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Quick Agent Input context menu missing on Windows 11\",\n  \"problem_summary\": \"The custom Quick Agent Input entry is absent from the VS Code context menu, leaving only the default Windows context options.\",\n  \"evidence\": [\n    \"Only the Windows context menu is shown.\",\n    \"The Quick Agent Input menu is a custom context‑menu item that is missing.\",\n    \"Windows 11’s new context‑menu implementation can suppress or override non‑system entries.\"\n  ],\n  \"suggested_improvements\": [\n    \"Verify and re‑create the necessary shell‑extension registry entries for the Quick Agent Input command.\",\n    \"Update to a VS Code build that restores native context‑menu support for Windows 11.\",\n    \"Add a fallback to programmatically inject the menu item when the native menu API is unavailable.\"\n  ],\n  \"possible_causes\": [\n    \"A Windows 11 registry change removed or disabled the custom context‑menu command.\",\n    \"The VS Code build does not integrate with the native Windows 11 context‑menu API.\",\n    \"The custom menu item is not registered as a shell extension after an OS update.\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #36/42 | ID: 304127 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet confirms a flaky unread state bug in the chat view, matching the described symptoms and indicating it has been verified in Insider builds.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Unread status not updated for single session, [Symptoms] Chat remains read after completion, [Environment] unknown, [Possible Category] UI / Interaction, [Problem Type] Unread flag not set",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Unread flag for single chat sessions remains unset after completion\",\n  \"problem_summary\": \"Chat sessions that are read by the user are sometimes displayed as unread after restarting VS Code Insiders, indicating that the unread state is not reliably updated or persisted.\",\n  \"evidence\": [\n    \"Description of unread status not updating after chat completion.\",\n    \"Screenshot showing local unread sessions appearing even after all sessions have been read.\"\n  ],\n  \"suggested_improvements\": [\n    \"Ensure the unread flag is updated immediately when a session is marked as read.\",\n    \"Force a UI refresh of the chat agent view after read status changes.\",\n    \"Persist read status to disk or backend before exiting the application.\",\n    \"Add diagnostic logs for unread state transitions to aid in reproduction.\"\n  ],\n  \"possible_causes\": [\n    \"Race condition between UI update and state persistence.\",\n    \"Caching of read/unread status that is not invalidated on session close.\",\n    \"Incorrect handling of local session metadata during reload.\",\n    \"Delay or failure in syncing read state with the backend.\"\n  ],\n  \"notes\": \"Environment specifics are unknown, but issue occurs in Insiders builds. Reproducing requires restarting after reading all sessions.\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #37/42 | ID: 304111 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a sync icon wobble due to mis‑centered text, not a widget bubble arrow alignment issue.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses panel icon orientation, not widget bubble arrow alignment.'}
+
+🔎 Checking candidate #3
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet describes a similar arrow‑alignment problem, but it refers to the NES suggestion UI and 3‑digit lines, not a button widget. It can help identify the issue type but does not fully match the specific context, so additional details would be needed for a complete brief.'}
+
+🔎 Checking candidate #4
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses vertical alignment of chat headers, not arrow positioning on a button, so it does not address the reported issue.'}
+
+🔎 Checking candidate #5
+{'relevant': True, 'sufficient': False, 'reason': 'The snippet discusses a centering/alignment issue in a UI, which is related to the user’s bubble‑arrow alignment problem, but it does not address the specific widget or arrow component, so it’s not enough to craft a focused issue or improvement brief.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ **Issue Brief – Widget Bubble Arrow Not Centered**
+
+**Problem Summary**  
+The arrow icon in the widget bubble (e.g., NES suggestion dropdown) is mis‑aligned – it is left‑aligned instead of being centered on the button.  
+
+**Reported Symptoms**  
+- Arrow appears to the left of the center, creating uneven spacing on the right side.  
+- The visual imbalance is noticeable especially on lines with 3‑ or 4‑digit numbers.  
+
+**Environment**  
+- OS, VS Code version, and hardware details were not provided in the report.  
+- The issue was reported on the GitHub issues of the **NES (Name & Export Suggestions)** extension, so it is relevant to that extension’s UI.
+
+**Category**  
+- UI / Interaction  
+- Alignment / Layout issue  
+
+**Related Reports**  
+- *NES arrow does not look well centered on 3-digit lines* – same visual symptom with screenshots.  
+- *NES rename UI isn’t centered* – additional UI centering problem within the same extension, indicating a potential common underlying layout issue.
+
+**Next Steps (Recommended)**  
+1. Verify the alignment in the current VS Code build and NES extension release.  
+2. Inspect the CSS/HTML responsible for the bubble arrow positioning in the extension.  
+3. Apply a centering fix (e.g., `margin: 0 auto;` or `left: 50%; transform: translateX(-50%);`).  
+4. Test across different line lengths and fonts to ensure consistent centering.  
+5. Update the extension’s documentation and commit the fix with a new version.  
+
+**Conclusion**  
+The collected information (two GitHub bug reports, screenshots, and a clear symptom description) is sufficient to generate a concise issue brief. No additional search is required at this time.  
+
+**Action**: *generate*
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+🔍 Generated queries:
+ - VS Code widget bubble arrow misaligned
+ - VS Code UI arrow alignment bug
+ - VS Code button tooltip arrow left aligned
+ - VS Code tooltip arrow offset
+ - VS Code UI arrow not centered
+🌍 Searching for: VS Code widget bubble arrow misaligned
+🌍 Searching for: VS Code UI arrow alignment bug
+🌍 Searching for: VS Code button tooltip arrow left aligned
+🌍 Searching for: VS Code tooltip arrow offset
+🌍 Searching for: VS Code UI arrow not centered
+✅ Retrieved 16 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: store
+Rationale: No directly relevant information found to generate a brief.
+Raw results retrieved: 16
+>>> ReAct returned decision: store
+{
+  "feedback": "[Problem] Widget bubble arrow not centered on button. [Symptoms] Arrow left-aligned. [Environment] os=Unknown, vscode_version=Unknown, hardware=Unknown. [Possible Category] UI / Interaction. [Problem Type] Alignment issue.",
+  "collected": [
+    "[bug, verified, NES, NES-ux] NES arrow does not look well centered on 3-digit lines\n\nTesting #281260\n\n1. Get a NES suggestion\n2. Scroll it to 3-digit, or 4-digit lines\n3. Notice the arrow is no longer nicely centered (there is more space to the right of the arrow, compared to the left)\n\n<img width=\"127\" height=\"57\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/f171b98f-7fe3-4ad5-9a4f-d38be70c34f9\" />\n\ncc @hediet @benibenj",
+    "[bug, verified, insiders-released, NES, NES-ux] NES rename UI isn't centered\n\n* check out screen shot\n* the label (`telemetry`) doesn't seem centred\n* the middle border/separate is a little too busy\n\n<img width=\"245\" height=\"89\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/451fe090-81b4-4d29-8b69-799669090c54\" />"
+  ],
+  "decision": "**Issue Brief – Widget Bubble Arrow Not Centered**\n\n**Problem Summary**  \nThe arrow icon in the widget bubble (e.g., NES suggestion dropdown) is mis‑aligned – it is left‑aligned instead of being centered on the button.  \n\n**Reported Symptoms**  \n- Arrow appears to the left of the center, creating uneven spacing on the right side.  \n- The visual imbalance is noticeable especially on lines with 3‑ or 4‑digit numbers.  \n\n**Environment**  \n- OS, VS Code version, and hardware details were not provided in the report.  \n- The issue was reported on the GitHub issues of the **NES (Name & Export Suggestions)** extension, so it is relevant to that extension’s UI.\n\n**Category**  \n- UI / Interaction  \n- Alignment / Layout issue  \n\n**Related Reports**  \n- *NES arrow does not look well centered on 3-digit lines* – same visual symptom with screenshots.  \n- *NES rename UI isn’t centered* – additional UI centering problem within the same extension, indicating a potential common underlying layout issue.\n\n**Next Steps (Recommended)**  \n1. Verify the alignment in the current VS Code build and NES extension release.  \n2. Inspect the CSS/HTML responsible for the bubble arrow positioning in the extension.  \n3. Apply a centering fix (e.g., `margin: 0 auto;` or `left: 50%; transform: translateX(-50%);`).  \n4. Test across different line lengths and fonts to ensure consistent centering.  \n5. Update the extension’s documentation and commit the fix with a new version.  \n\n**Conclusion**  \nThe collected information (two GitHub bug reports, screenshots, and a clear symptom description) is sufficient to generate a concise issue brief. No additional search is required at this time.  \n\n**Action**: *generate*\n(Online search insufficient)",
+  "bug_report": null,
+  "metadata": {}
+}
+
+===== 🧩 Running Case #38/42 | ID: 304038 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': "The snippet discusses workspace trust prompts appearing too early, not the 'Thinking...' rendering delay observed when opening a CLI chat session."}
+
+🔎 Checking candidate #2
+{'relevant': True, 'sufficient': False, 'reason': "The snippet discusses UI issues with CLI chat sessions (missing card/history), which is related to UI/Interaction, but it does not address the specific rendering delay or 'Thinking...' symptom described in the user feedback."}
+
+🔎 Checking candidate #3
+{'relevant': True, 'sufficient': True, 'reason': "The candidate snippet describes the same symptom (a transient 'Thinking...' state when loading a prior session while editing) and includes reproduction steps and evidence, matching the user's issue."}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Opening a previously run CLI chat session shows a brief 'Thinking...' state. [Symptoms] 'Thinking...' appears before the final message. [Environment] unknown. [Possible Category] UI / Interaction. [Problem Type] Rendering delay.",
+  "collected": [
+    "[bug, verified] Want more meaningful chat history after delegating to CLI\n\n<!-- ⚠️⚠️ Do Not Delete This! feature_request_template ⚠️⚠️ -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- Please search existing issues to avoid creating duplicates. -->\n\n<!-- Describe the feature you'd like. -->\nRef https://github.com/microsoft/vscode-internalbacklog/issues/6311\n\nAfter delegating to the CLI, I return to my local chat panel conversation, and the response looks empty:\n<img width=\"719\" height=\"1364\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/9b6a7c08-477a-4575-bd1a-b5f0d6039397\" />\n\nI'm used to seeing the PR card in local chat when we delegate to CCA - I suppose I'm looking for a similar card for the CLI (i.e. a link to the session in a chat editor, or a link to the Agent Sessions view)."
+  ],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Loading a previous Copilot Chat session while editing a request causes UI to enter an inconsistent state\",\n  \"problem_summary\": \"When a user starts editing a request in Copilot Chat and then loads a previous chat session before finishing the edit, the chat UI transitions into a strange state where a 'Thinking...' indicator appears prematurely and the final message is not displayed correctly.\",\n  \"evidence\": [\n    \"Reproduction steps: 1) type 'hello' in chat; 2) click to edit the request; 3) load a previous session without completing the edit; 4) UI shows an abnormal state.\",\n    \"Screenshot linked in issue: https://github.com/user-attachments/assets/df1488f7-7ed0-453c-91f4-18edcbe88a40\"\n  ],\n  \"suggested_improvements\": [\n    \"Block or cancel the edit operation when a new session is loaded to avoid state conflicts.\",\n    \"Queue session loads to wait until the edit is committed or cancelled.\",\n    \"Show a clear loading indicator and disable input while a new session is being loaded.\",\n    \"Add logging to trace the internal state changes during load and edit transitions for easier debugging.\"\n  ],\n  \"possible_causes\": [\n    \"Race condition between asynchronous edit state handling and session load operation.\",\n    \"Internal message queue not cleared before loading a new session, leading to leftover 'Thinking...' state.\",\n    \"UI component re-render triggered by session load not accounting for ongoing edit, causing incorrect component state.\",\n    \"State mutation in shared context (e.g., chat session data) that is not isolated between edit and load actions.\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #39/42 | ID: 304024 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a UI z-index bug in the chat task list, which is unrelated to the usability issue of the `chat.subagents.maxDepth` setting.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses chat customization description truncation, not the chat.subagents.maxDepth setting.'}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': "The snippet addresses a UI bug about a small 'Allow' button for sub‑agents, not the advanced `chat.subagents.maxDepth` setting that users find too complex."}
+
+🔎 Checking candidate #4
+{'relevant': False, 'sufficient': False, 'reason': "The snippet discusses a different setting ('Configure Empty State') and does not provide information about the `chat.subagents.maxDepth` configuration issue."}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': "The snippet discusses UI behavior of the sessions sidebar, not the advanced 'chat.subagents.maxDepth' setting; it does not address the reported usability issue."}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ search
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] The `chat.subagents.maxDepth` setting is too advanced to configure; [Symptoms] Users find it too complex; [Environment] VS Code; [Possible Category] Settings / Configuration; [Problem Type] Usability.
+🌍 Searching for: [Problem] The `chat.subagents.maxDepth` setting is too advanced to configure; [Symptoms] Users find it too complex; [Environment] VS Code; [Possible Category] Settings / Configuration; [Problem Type] Usability.
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The summary clearly identifies the usability issue, outlines symptoms, context, and potential remedies, providing sufficient detail for creating a structured VS Code issue brief.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] The `chat.subagents.maxDepth` setting is too advanced to configure; [Symptoms] Users find it too complex; [Environment] VS Code; [Possible Category] Settings / Configuration; [Problem Type] Usability.",
+  "collected": [],
+  "decision": "search\n(Used online search summary)",
+  "bug_report": "{\n  \"type\": \"configuration_issue\",\n  \"title\": \"\\\"chat.subagents.maxDepth\\\" setting is too advanced for users\",\n  \"problem_summary\": \"Users report that the \\\"chat.subagents.maxDepth\\\" setting is difficult to understand and configure, leading to confusion and potential misconfiguration.\",\n  \"evidence\": [\n    \"User feedback: The `chat.subagents.maxDepth` setting is too advanced to configure.\",\n    \"Symptoms: Users find it too complex.\"\n  ],\n  \"suggested_improvements\": [\n    \"Provide a user-friendly description and tooltip explaining the purpose and effect of the setting.\",\n    \"Add a drop‑down or slider in the settings UI with preset values (e.g., \\\"Default\\\", \\\"Limited\\\", \\\"Extended\\\").\",\n    \"Set a sensible default that works for most use cases and document the default behavior.\",\n    \"Create a quick‑start guide or FAQ snippet in the settings editor.\"\n  ],\n  \"possible_causes\": [\n    \"The setting name and its parameter are technically oriented and lack context.\",\n    \"Documentation may not include practical examples or visual aids.\",\n    \"No visual control (e.g., slider) to limit input to a recommended range.\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #40/42 | ID: 304019 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a terminal count refresh bug, not a chat rename delay.'}
+
+🔎 Checking candidate #2
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet discusses persistence of todos and edits across chat sessions, not the delay in applying chat renames.'}
+
+🔎 Checking candidate #3
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet concerns chat session status icons, not chat rename UI updates, so it does not address the user’s issue.'}
+
+🔎 Checking candidate #4
+{'relevant': False, 'sufficient': False, 'reason': 'The snippet describes a language‑change UI delay, not a rename update delay, so it does not address the user’s issue.'}
+
+🔎 Checking candidate #5
+{'relevant': False, 'sufficient': False, 'reason': 'The candidate snippet discusses a different bug (missing references during delegation), which does not address the issue of a rename not updating until manual refresh.'}
+
+🧠 Invoking ReAct reasoning agent...
+
+🧩 ReAct reasoning trace:
+ **Decision: search**
+
+The current data is too limited to draft a comprehensive issue brief. To create a useful report, we need additional details such as the VS Code version, operating system, specific extension involved (if any), and the exact steps that trigger the rename delay. Gathering this information will enable a more accurate diagnosis and actionable recommendations.
+
+🧠 ReAct decided to perform online search...
+🧠 Generating search queries...
+⚠️ Query parsing failed, fallback to raw feedback
+🔍 Generated queries:
+ - [Problem] Chat rename not applied until manual refresh, [Symptoms] Rename appears unchanged, [Environment] VS Code environment unspecified, [Possible Category] UI / Interaction, [Problem Type] UI update delay
+🌍 Searching for: [Problem] Chat rename not applied until manual refresh, [Symptoms] Rename appears unchanged, [Environment] VS Code environment unspecified, [Possible Category] UI / Interaction, [Problem Type] UI update delay
+✅ Retrieved 5 unique results.
+🧠 Summarizing search results...
+
+📊 ===== Online Search Agent Decision =====
+Action: generate
+Rationale: The summary provides sufficient detail on symptoms, environment patterns, and probable causes to craft a structured VS Code issue brief.
+Raw results retrieved: 5
+>>> ReAct returned decision: generate
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Chat rename not applied until manual refresh, [Symptoms] Rename appears unchanged, [Environment] VS Code environment unspecified, [Possible Category] UI / Interaction, [Problem Type] UI update delay",
+  "collected": [],
+  "decision": "**Decision: search**\n\nThe current data is too limited to draft a comprehensive issue brief. To create a useful report, we need additional details such as the VS Code version, operating system, specific extension involved (if any), and the exact steps that trigger the rename delay. Gathering this information will enable a more accurate diagnosis and actionable recommendations.\n(Used online search summary)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"Chat rename not reflected until manual UI refresh\",\n  \"problem_summary\": \"Renaming a chat does not update the UI immediately; the new name appears only after the user manually refreshes the view.\",\n  \"evidence\": [\n    \"Rename appears unchanged until a manual refresh is performed\",\n    \"Similar behavior observed in the VS Code Python Environments view and Windows folder views\",\n    \"React‑jsonschema‑form documentation notes that nested titles can be ignored, implying state propagation issues\"\n  ],\n  \"suggested_improvements\": [\n    \"Trigger an immediate UI update after the rename operation completes\",\n    \"Implement an event or state change subscription so the chat list listens for rename events\",\n    \"Invalidate any cached view data that may be holding the old name\",\n    \"Add unit tests to verify that a rename propagates to the UI without manual refresh\"\n  ],\n  \"possible_causes\": [\n    \"Caching of the chat list that isn't invalidated after a rename\",\n    \"Missing or miswired event listeners for rename events in the view hierarchy\",\n    \"Framework bug where nested state changes (like title changes) are ignored\",\n    \"Subscription to data updates not being triggered after rename\"\n  ],\n  \"notes\": \"\"\n}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #41/42 | ID: 303931 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': True, 'reason': "The snippet directly matches the user's description of premature command completion, includes environment, steps, expected/actual behavior, and proposed fixes—providing all necessary context for a grounded issue brief."}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] Agent fails to detect command completion in terminal, [Symptoms] Agent waits for echos before proceeding and sends successive echos prematurely, [Environment] macOS 25.3.0 on Apple M4 with VS Code Insiders 1.113.0, [Possible Category] Terminal, [Problem Type] Command completion detection",
+  "collected": [],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\"type\":\"bug\",\"title\":\"Copilot agent prematurely reports command completion in VS Code integrated terminal\",\"problem_summary\":\"The Copilot agent declares a long‑running command finished after roughly 10 seconds, even though the shell still shows the command executing and the expected output is missing.\",\"evidence\":[\"- Log shows start time Mon Aug 4 17:46:07 and agent reports success after ~10 s while `npm run lint` continues to run\",\"- Missing ESLint/remark output and the intended completion echo `✅ Lint completed successfully`\",\"- Reproduced with both bash 5.2.15 and zsh 5.9 on macOS 25.3.0; VS Code Insiders 1.113.0 and Copilot 1.352.1715\"],\"suggested_improvements\":[\"- Use VS Code shell‑integration completion signals instead of a fixed timeout\",\"- Expose the timeout duration as a user‑configurable setting\",\"- Log exit code and stdout/stderr when the terminal reports command exit\",\"- Add a diagnostic flag to surface when the agent times out before the shell reports completion\"],\"possible_causes\":[\"- Hardcoded 10 s timeout in the Copilot agent’s command‑execution logic\",\"- Missed or delayed shell‑integration completion events for long‑running processes\",\"- Agent incorrectly interprets the presence of the `COMMAND_COMPLETED` signal\",\"- Shell integration might be mis‑configured or not fully loaded in the terminal\"],\"notes\":\"This issue affects build, lint, and test workflows and makes the Copilot agent unreliable for commands that exceed the current timeout threshold.\"}",
+  "metadata": {}
+}
+
+===== 🧩 Running Case #42/42 | ID: 303895 =====
+🧠 Checking if feedback matches any existing generated reports...
+🧩 All similarity scores below threshold (0.8). Skipping reuse.
+❌ No reusable memory found. Proceeding with normal reasoning...
+
+
+🔎 Checking candidate #1
+{'relevant': True, 'sufficient': False, 'reason': 'References the auxiliary sidebar, but does not address the specific auxiliaryBarFocus flag bug.'}
+
+🔎 Checking candidate #2
+{'relevant': True, 'sufficient': True, 'reason': 'The snippet describes the same UI/interaction bug where focusing a sidebar from an auxiliary window fails to bring the main window into focus, matching the reported auxiliaryBarFocus flag issue.'}
+📝 Generating issue/improvement brief...
+✅ Added new report to persistent memory (ChromaDB)
+{
+  "feedback": "[Problem] auxiliaryBarFocus flag always false; [Symptoms] keybindings with that context never trigger; [Environment] macOS 26.3.1 VS Code 1.111.0; [Possible Category] UI / Interaction; [Problem Type] context key bug",
+  "collected": [
+    "[bug, verified, ux, confirmed, insiders-released, workbench-auxsidebar] View / view container title context menu entries inconsistent\n\n1. activity bar to the top\n2. right click on a view title in the secondary side bar\n3. 🐍 No activity bar position action...\n\n**Primary Sidebar**\n\n![Image](https://github.com/user-attachments/assets/a3ac592d-bb2c-4e6c-a8b0-b38861779d08)\n\n**Secondary Sidebar**\n\n![Image](https://github.com/user-attachments/assets/67a21c75-536a-4577-b73f-c0a755df1d81)"
+  ],
+  "decision": "Action: Generate (sufficient evidence found locally, reasoning skipped)",
+  "bug_report": "{\n  \"type\": \"bug\",\n  \"title\": \"auxiliaryBarFocus context key always false in auxiliary windows, preventing sidebar keybindings from firing\",\n  \"problem_summary\": \"In VS Code, the `auxiliaryBarFocus` context key never becomes true when the user is in an auxiliary window, causing all sidebar‑related keybindings to be ignored. Sidebar views are displayed but remain unfocused, requiring a manual Alt+Tab to the main window to interact with them.\",\n  \"evidence\": [\n    \"auxiliaryBarFocus flag always false\",\n    \"keybindings that rely on that context never trigger\",\n    \"macOS 26.3.1 VS Code 1.111.0\",\n    \"Aux window: focused window does not change to main window when focusing sidebar\"\n  ],\n  \"suggested_improvements\": [\n    \"Update the context key logic so that `auxiliaryBarFocus` is set to true when an auxiliary window has focus and a sidebar view is revealed.\",\n    \"Automatically shift focus to the main window when a sidebar view receives focus from an auxiliary window.\",\n    \"Add tests to validate `auxiliaryBarFocus` behavior across all window types.\",\n    \"Provide a setting to toggle whether focus should move to the main window for sidebar actions.\"\n  ],\n  \"possible_causes\": [\n    \"Incorrect or missing update to the `auxiliaryBarFocus` context key in the focus management code.\",\n    \"Missing focus event handling for auxiliary windows on macOS.\",\n    \"Bug in the command/keyboard binding engine that fails to evaluate the context correctly for aux windows.\"\n  ],\n  \"notes\": \"This issue hampers keyboard‑centric workflows and affects productivity on macOS. A prompt resolution would benefit users relying on multi‑window setups.\"\n}",
+  "metadata": {}
+}
+
+📊 Reuse Stats Summary:
+  - Total cases processed: 42
+  - Total reuses: 0
+  - Reuse rate: 0.00%
